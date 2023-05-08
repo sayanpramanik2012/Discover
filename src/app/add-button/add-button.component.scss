@@ -1,0 +1,15 @@
+.material-symbols-outlined {
+    background-color: transparent;
+    font-size: 18px;
+    color: black;
+    border: none;
+    padding: 8px;
+    opacity: 1;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    &:hover{
+      background-color: rgb(224, 224, 224);
+      color: black;
+      padding:8px;
+    }
+}
