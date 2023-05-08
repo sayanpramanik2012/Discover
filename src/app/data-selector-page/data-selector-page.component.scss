@@ -1,0 +1,324 @@
+
+.dialogbox{
+    background-color:white;
+    border: rgb(248, 247, 247);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 33%;
+    height: 77%;
+    border-radius: 4px;
+    .head {
+    
+      font-weight: bold;
+      font-size: 22px;
+      padding-top: 3%;
+      // padding: 3% 5%;
+    }
+
+    .back {
+      position: absolute;
+      top: 3%;
+      left: 3%;
+      font-size: 20px;
+      height: 30px;
+      width: 30px;
+      &:hover{
+        background-color: rgb(211, 204, 204);
+      }
+    }
+    .cut {
+      position: absolute;
+      top: 3%;
+      right: 10px;
+      height: 30px;
+      width: 30px;
+      font-size: 20px;
+      background-size: cover;
+      // padding: 10px;
+      &:hover{
+        background-color: rgb(211, 204, 204);
+      }
+  
+    }
+  
+  }
+  .report-header {
+   
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(143, 140, 140);
+    float: left;
+    font-size: 15px;
+    background-color: rgb(248, 245, 245);
+    font-weight: 200;
+    padding-left: 20px;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    min-height: 35px;
+    font-size: 1rem;
+    // padding: 10px 40px;
+   
+    left: 13px;
+    width: 240px;
+    
+  }
+  
+
+ 
+  .dataset-header-container {
+    padding: 7px 25px; /* adjust the padding as needed */
+
+    p {
+      font-size: 18px;
+      margin-top: 4px;
+      margin-bottom: 13px;
+    }
+  
+    div {
+      margin-top: 2px;
+  
+      img {
+        margin-left: -230px;
+      }
+  
+      input {
+        font-size: 15px;
+        border: none;
+        border-bottom:  1px solid rgb(109, 105, 105);
+        outline: none;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        padding: 5px;     
+      }
+    }
+  }
+ 
+  img {
+    width: 21px;
+    height: 21px;
+    margin-left: -250px;
+    margin-top: 10px;
+  }
+  
+
+  .scrollable-container {
+    width: 100%;
+    overflow-y: scroll;
+
+    .container {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgb(146, 140, 140);
+      margin: 15px 18px;
+    }
+
+    .inside-container{
+       width: 15%;
+       padding-left: 0%;
+    }
+    
+    
+  }
+  
+  .content {
+    flex-grow: 1;
+  
+    &-title {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 9px;
+      
+      
+    }
+  
+    &-title-small {
+      font-size: 16px;
+      padding-left: 10px;
+    }
+  
+    &-description {
+      font-size: 15px;
+      padding-top: 18px;
+      
+    }
+  }
+  
+
+
+
+
+  
+  .box-container {
+    align-items: center;
+   
+    justify-content: space-between;
+  }
+  .context_5 {
+    
+  
+    left: 35px;
+    top: 30px;
+  
+  }
+  .box {
+    flex-basis: calc(33.33% - 20px);
+    display: flex;
+    margin: 10px;
+    width: 478px;
+    height: 115px;
+    border:  1px solid rgb(204, 197, 197);
+  }
+  
+  
+  .cut1{
+    background-color: transparent;
+    font-size: 18px;
+    top: 4%;
+    right: 10px;
+    color: black;
+    border: none;
+    padding: 8px;
+    opacity: 1;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(224, 224, 224);
+      color: black;
+      padding:8px;
+  }
+}
+  .icon {
+    position: unset;
+    top: -500px;
+    margin: 10px 20px 10px 20px;
+    background-image: url("../../assets/images/home.png");
+    background-size: cover;
+  }
+  
+  .bottom-side {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .buttons{
+    display: flex; 
+    align-items: center;
+     margin-bottom: 10px;
+  }
+  .buttons-padding{
+    flex-grow: 1;
+     padding: 20px;
+
+  }
+
+
+  .checkbox1 {
+    border-radius: 50%;
+    border: 2px solid black;
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+    
+  }
+  
+  .cancel {
+    align-self: last baseline;
+    // margin-left: 100px;
+    padding: 8px;
+    margin-bottom: 3px;
+    margin-right: 28px;
+    // padding-right: 25px;
+    color: blue;
+    background-color: transparent;
+    border: none;
+    font-size: 17px;
+    padding: 40 px;
+
+    cursor:pointer;
+    &:hover{
+      // padding: 9px 15px; 
+      background-color: rgb(223, 218, 218);
+       
+        // font-weight: bold;
+    }
+  }
+  .border-next{
+    padding-right: 20px;
+  }
+  .content-wrapper .next   {
+    align-self: last baseline;
+    margin-left: 40px;
+    color: white;    
+    width: 80px;
+    // margin-top: -90px;
+    // margin-right: 15px;
+    padding: 9px 15px; 
+    margin-bottom: 18px; 
+    // height: 25px;
+    cursor:pointer;
+    margin: 3px;
+    &:hover{
+      padding: 9px 15px; 
+      background-color: rgb(223, 218, 218);
+        // font-weight: bold;
+    }
+  }
+  
+  .apply{
+    align-self: last baseline;
+    margin-left: 20px;
+    color: white;    
+    width: 120px;
+    // margin-top: -90px;
+    margin-right: 15px;
+    padding: 9px 15px;  
+    border: none; 
+    cursor:pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease-in-out;
+   
+  }
+
+  .shimmer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: shimmer 1s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .shimmer.active {
+    animation-duration: 1.5s;
+  }
+
+
+  .background{
+    
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;bottom: 0;left: 0;right: 0;
+    margin: auto;
+    background-color: #aaa3a380;
+  }
