@@ -5,14 +5,14 @@
           currentContentType === contentType.Dataset ||
           currentContentType === contentType.ViewPoint
         " class="back" mat-dialog-close>←</mat-icon>
-  
+
       <div class="head" [ngStyle]="{ 'padding-left': currentContentType === contentType.SourceType? '8%':'14%', }">
         {{ heading }}
       </div>
-  
+
       <mat-icon class="cut" aria-hidden="false" aria-label="Example cross icon" (click)="showDataSelector()"
         mat-dialog-close>X</mat-icon>
-  
+
       <div class="dataset-header-container">
         <p *ngIf="
             currentContentType === contentType.Dataset ||
@@ -28,7 +28,7 @@
           <input class="report-header" type="text" id="report-header" size="15" />
         </div>
       </div>
-  
+
       <div class="scrollable-container"
         [ngStyle]="{ 'height': currentContentType === contentType.SourceType? '75%':'55%', }">
         <div class="container" *ngFor="let item of sourcelist; let i = index" [ngStyle]="{
@@ -44,7 +44,7 @@
           <div class="inside-container" *ngIf="currentContentType === contentType.SourceType">
             <mat-icon class="icon" aria-hidden="false" aria-label=" home icon"></mat-icon>
           </div>
-  
+
           <div class="content content_1">
             <div class="content-wrapper">
               <ng-container *ngIf="
@@ -57,12 +57,12 @@
                 <span class="content-title-small">{{ item.title }}</span>
               </ng-container>
               <br *ngIf="currentContentType === contentType.SourceType" />
-  
+
               <span *ngIf="currentContentType === contentType.SourceType" class="content-description">{{ item.description
                 }}</span>
             </div>
           </div>
-  
+
           <div class="checkbox" [ngStyle]="{
               'padding-right': '10px',
               'min-width': '10%',
@@ -77,7 +77,7 @@
           </div>
         </div>
       </div>
-  
+
       <div class="bottom-side" [ngStyle]="{ 'height': currentContentType === contentType.SourceType? '17%':'10%',}">
         <div style="flex-grow: 1"></div>
         <div class="buttons">
@@ -87,7 +87,7 @@
               Cancel
             </button>
           </div>
-  
+
           <div class="content-wrapper">
             <div class="border-next" *ngIf="
                 currentContentType === contentType.SourceType ||
@@ -102,14 +102,14 @@
               </button>
             </div>
           </div>
-  
+
           <div *ngIf="currentContentType === contentType.ViewPoint">
             <button class="apply" [disabled]="!isAtLeastOneCheckboxSelected" [style.background]="
                 isAtLeastOneCheckboxSelected ? 'blue' : '#bbccdd'
               " (click)="showDataSelector(); updateFooterString()" >
               Apply Dataset
             </button>
-            
+
           </div>
         </div>
       </div>
