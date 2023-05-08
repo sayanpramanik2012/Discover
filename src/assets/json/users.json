@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Test",
+    "visibleIndexes": ["Monitor my business","Choose a template"],
+    "per":1
+  },
+  {
+    "name": "Omkar",
+    "visibleIndexes": ["Monitor my business","Choose a template", "Find my stuff"],
+    "per":2
+  },
+  {
+    "name": "Sayan",
+    "visibleIndexes": ["Monitor my business","Choose a template","Build a table", "Find my stuff"],
+    "per":3
+  },
+  {
+    "name": "Anirudh",
+    "visibleIndexes": ["Monitor my business","Choose a template","Build a table", "Find my stuff"],
+    "per":3
+  }
+]
