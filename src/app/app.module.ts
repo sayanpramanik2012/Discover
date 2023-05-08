@@ -25,9 +25,6 @@ import { BrandBarComponent } from './brand-bar/brand-bar.component';
     AddButtonComponent,
     FooterComponent,
     BrandBarComponent,
-
-
-
   ],
   imports: [
     BrowserModule,

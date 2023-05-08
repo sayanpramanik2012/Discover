@@ -1,12 +1,8 @@
-
-
-
-
 <app-brand-bar></app-brand-bar>
-<app-data-summary></app-data-summary>
-<app-report-page></app-report-page>
-<app-footer></app-footer>
-<app-data-selector-page></app-data-selector-page>
+<app-data-summary *ngIf="dataSelected"></app-data-summary>
+<app-report-page  *ngIf="dataSelected"></app-report-page>
+<app-footer (dataSelector)="[dataSelected=$event]"></app-footer> 
+
 
 
 
