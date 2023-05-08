@@ -18,7 +18,10 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "useDefineForClassFields": false,
+    "noImplicitAny": false,
     "lib": [
       "ES2022",
       "dom"

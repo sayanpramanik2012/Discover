@@ -1,0 +1,95 @@
+ {
+    "columnDefs": [
+        { "headerName": "Markets", "field": "markets", "headerClass": "title-class" },
+        { "headerName": "Periods", "field": "periods", "headerClass": "title-class" },
+        { "headerName": "Products", "field": "products", "headerClass": "title-class" },
+        { "headerName": "Price", "field": "$", "headerClass": "title-class" }
+      ],
+
+    "rowData":[
+    {
+      "markets": "Total US Food",
+      "periods": "4 w/e 07/20/19",
+      "products": "BEER | ANHEUSER-BUSCH IN BEV SA",
+      "$": 349268354.912
+    },
+    {
+      "markets": "Indianapolis SMM xAOC",
+      "periods": "4 w/e 08/17/19",
+      "products": "COFFEE | MOLSON COORS BEVERAGE COMPANY",
+      "$": 104530.990
+    },
+    {
+      "markets": "DeCA Alaska TA",
+      "periods": "4 w/e 07/20/19",
+      "products": "RTD COFFEE | MOLSON COORS BEVERAGE COMPANY",
+      "$": 11533.960
+    },
+    {
+      "markets": "Total US Beverage",
+      "periods": "4 w/e 07/20/19",
+      "products": "SODA | PEPSICO INC",
+      "$": 528945834.120
+    },
+    {
+      "markets": "Boston Convenience Stores",
+      "periods": "4 w/e 08/17/19",
+      "products": "CHIPS | KELLOGG COMPANY",
+      "$": 18230.720
+    },
+    {
+      "markets": "Chicago Grocery",
+      "periods": "4 w/e 07/20/19",
+      "products": "CEREAL | GENERAL MILLS INC",
+      "$": 3367123.710
+    },
+    {
+      "markets": "Los Angeles Restaurants",
+      "periods": "4 w/e 08/17/19",
+      "products": "PIZZA | NESTLE SA",
+      "$": 987654.320
+    },
+    {
+      "markets": "Houston Gas Stations",
+      "periods": "4 w/e 07/20/19",
+      "products": "SNACKS | MONDELEZ INTERNATIONAL INC",
+      "$": 17983.560
+    },
+    {
+      "markets": "New York City Supermarkets",
+      "periods": "4 w/e 08/17/19",
+      "products": "YOGURT | DANONE SA",
+      "$": 256473.990
+    },
+    {
+      "markets": "Total US Mass",
+      "periods": "4 w/e 07/20/19",
+      "products": "SHAMPOO | PROCTER & GAMBLE CO",
+      "$": 7829373.220
+    },
+    {
+      "markets": "San Francisco Specialty Stores",
+      "periods": "4 w/e 08/17/19",
+      "products": "TEA | UNILEVER NV",
+      "$": 12456.890
+    },
+    {
+      "markets": "Seattle Whole Foods",
+      "periods": "4 w/e 07/20/19",
+      "products": "ORGANIC FRUIT | DOLE FOOD COMPANY INC",
+      "$": 89735.230
+    },
+    {
+      "markets": "Dallas Walmart",
+      "periods": "4 w/e 08/17/19",
+      "products": "LAUNDRY DETERGENT | THE CLOROX COMPANY",
+      "$": 450362.670
+    },
+    {
+      "markets": "Denver Target",
+      "periods": "4 w/e 07/20/19",
+      "products": "DEODORANT | COLGATE-PALMOLIVE COMPANY",
+      "$": 450362.670
+    }
+]
+ }

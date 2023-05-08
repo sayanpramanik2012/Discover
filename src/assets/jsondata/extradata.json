@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Markets",
+    "data": ["US","Thialand","Total US",
+    "IND"]
+  },
+  {
+    "label": "Products",
+    "data": ["Food","BEER","Beer",
+    "Coco cola",
+    "Coffee",
+    "Milk"]
+  },
+  {
+    "label": "Periods",
+    "data": ["14 WEEKS","10 WEEKS","13 4 WEEKS"]
+  },
+  {
+    "label": "Facts",
+    "data": ["Rs","Pounds","$"]
+  }
+]
