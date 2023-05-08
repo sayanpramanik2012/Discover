@@ -5,7 +5,6 @@ import { BrandBarComponent } from './brand-bar.component';
 describe('BrandBarComponent', () => {
   let component: BrandBarComponent;
   let fixture: ComponentFixture<BrandBarComponent>;
-
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [BrandBarComponent]
