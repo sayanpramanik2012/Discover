@@ -1,0 +1,36 @@
+{
+    "data": [
+        {
+            "label": "Facts",
+            "value": [
+                "$"
+            ],
+            "prefix": ""
+        },
+        {
+            "label": "Products",
+            "value": [
+                "Beer",
+                "Coco cola",
+                "Coffee",
+                "Milk"
+            ],
+            "prefix": "of"
+        },
+        {
+            "label": "Markets",
+            "value": [
+                "Total US",
+                "IND"
+            ],
+            "prefix": "in"
+        },
+        {
+            "label": "Periods",
+            "value": [
+                "13 4 Weeks"
+            ],
+            "prefix": "during"
+        }
+    ]
+}
