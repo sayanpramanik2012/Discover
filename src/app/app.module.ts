@@ -18,7 +18,7 @@ import { BrandBarComponent } from './brand-bar/brand-bar.component';
     AppComponent,
     ReportPageComponent,
     AddButtonComponent,
-    FooterComponent
+    FooterComponent,
     BrandBarComponent
 
   ],
