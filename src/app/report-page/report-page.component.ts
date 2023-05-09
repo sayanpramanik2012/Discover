@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { ShimmerService } from '../services/shimmer.service';
+import { users } from 'src/assets/json/users';
 
 @Component({
   selector: 'app-report-page',
   templateUrl: './report-page.component.html',
   styleUrls: ['./report-page.component.scss']
 })
-export class ReportPageComponent {
+export class ReportPageComponent { 
+  showRunButton = true;
+
   constructor(public shimmerEffect: ShimmerService) { }
   inputValue: string = '';
   containerName: string = '';
@@ -20,6 +23,9 @@ export class ReportPageComponent {
     this.counter ++;
     this.containerCard.push({ containerName: container,
       tableName: 'Table-' + (this.counter).toString() });
+
   }
 
 }
+
+

@@ -4,12 +4,17 @@ import { AgGridAngular } from 'ag-grid-angular';
 import { ValueFormatterParams } from 'ag-grid-community';
 import { ShimmerService } from '../services/shimmer.service';
 
+
+
+
 @Component({
   selector: 'app-grid-table',
   templateUrl: './grid-table.component.html',
   styleUrls: ['./grid-table.component.scss']
 })
-export class GridTableComponent {
+export class GridTableComponent implements OnChanges {
+
+
   @ViewChild('agGrid') agGrid!: AgGridAngular;
   @Input() actualData;
   rowData: any = [];
@@ -58,5 +63,3 @@ export class GridTableComponent {
     return '####';
   }
 }
-
-

@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class ShimmerService {
   shimmerActive: boolean=false;
+  displayTable: boolean = false;
+  actualData: boolean = false;
 
   constructor() { }
   shimmering(){
