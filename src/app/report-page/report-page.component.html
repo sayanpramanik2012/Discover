@@ -32,9 +32,13 @@
           <button type="button" class="material-symbols-outlined" style="margin-right:10px;"> expand_content </button>
           <button type="button" class="material-symbols-outlined" > more_horiz </button>
         </div>
+        <app-grid-table   [actualData]="shimmerEffect.actualData" >
+       
+        </app-grid-table>
+
       </div>
-        <app-grid-table></app-grid-table>
-      </div>
-        </div>
-        <app-run-btn></app-run-btn>
+      <app-run-btn (previewStatus)="[shimmerEffect.actualData=$event]" 
+      ></app-run-btn>
+
+      
         </div>
