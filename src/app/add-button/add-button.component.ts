@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { of, delay } from 'rxjs';
+import { ShimmerService } from '../services/shimmer.service';
 
 @Component({
   selector: 'app-add-button',
@@ -7,6 +8,7 @@ import { of, delay } from 'rxjs';
   styleUrls: ['./add-button.component.scss']
 })
 export class AddButtonComponent {
+  constructor(public shimmerEffect: ShimmerService){}
   isDropdownOpen = false;
   displayTable = false ;
   // showRunButton=false;

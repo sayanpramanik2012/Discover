@@ -1,0 +1,15 @@
+.bottom-bar {
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    // box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    animation: fadeOut 3s ease-in-out forwards;
+  }
