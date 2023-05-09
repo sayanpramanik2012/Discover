@@ -18,6 +18,9 @@ import { GridTableComponent } from './grid-table/grid-table.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { SidePanelComponent } from './side-panel/side-panel.component';
 import { RunBtnComponent } from './run-btn/run-btn.component';
+import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
+
+
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import { RunBtnComponent } from './run-btn/run-btn.component';
     GridTableComponent,
     SidePanelComponent,
     RunBtnComponent,
+    BottomBarComponent,
+   
   ],
   imports: [
     BrowserModule,
