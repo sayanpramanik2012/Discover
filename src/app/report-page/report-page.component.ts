@@ -7,23 +7,23 @@ import { users } from 'src/assets/json/users';
   templateUrl: './report-page.component.html',
   styleUrls: ['./report-page.component.scss']
 })
-export class ReportPageComponent {
-  constructor(public shimmerEffect: ShimmerService){}
-  inputValue : string = '';
-  profilename: string = '';
-  permission: number | any;
+export class ReportPageComponent { 
   showRunButton = true;
 
-
+  constructor(public shimmerEffect: ShimmerService) { }
+  inputValue: string = '';
+  containerName: string = '';
+  counter : number = 1;
   
-  handleUsername(username: string) {
-    this.profilename = username;
-    //console.log("user:",this.profilename)
-    const foundItem = users.find(user => user.name === this.profilename);
-    if (foundItem) {
-      this.permission = foundItem.per;
-      //console.log("per:", this.permission)
-    }
+  containerCard = [
+    { containerName: 'Table', tableName: 'Table-1' },
+  ];
+  
+  addContainer(container: string) {
+    this.counter ++;
+    this.containerCard.push({ containerName: container,
+      tableName: 'Table-' + (this.counter).toString() });
+
   }
 
 }

@@ -15,6 +15,7 @@ export class AddButtonComponent {
   
   @Output() statusTableDisplay = new EventEmitter<boolean>();
   @Output() statusRunButtonDisplay = new EventEmitter<boolean>();
+  @Output() emitCardType = new EventEmitter<string>();
   buttons = [
     { name: 'Table', icon: 'fa fa-table' },
     { name: 'Line Chart', icon: 'fa fa-line-chart' },
@@ -34,6 +35,7 @@ export class AddButtonComponent {
       default:
         break;
     }
+    this.emitCardType.emit(button);
   }
 
   toggleDropdown() {
