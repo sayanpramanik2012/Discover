@@ -23,15 +23,16 @@
 }
 .back{
   position: fixed;
+  border: none;
+  background: none;
+  font-size: inherit;
+  cursor: pointer;
 }
 .values-list {
   background-color: #ececec;
   padding: 10px;
   margin-top: 50px;
-  position: absolute;
-  top: 17%;
-  left: 10%;
-  transform: translate(10%, -50%);
+  position: relative;
   z-index: 100;
   &:hover{
     cursor:pointer
