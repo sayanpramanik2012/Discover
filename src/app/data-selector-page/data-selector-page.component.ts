@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialogRef, MatDialog } from '@angular/material/dialog';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ShimmerService } from '../services/shimmer.service';
 
 
 enum contentType {
@@ -30,7 +31,7 @@ bottomContent : string =" NielsenIq "
   contentType = contentType;
   currentContentType = contentType.SourceType;
 
-  constructor(private http: HttpClient, public dialog: MatDialog) {
+  constructor(private http: HttpClient, public dialog: MatDialog, public shimmerEffect: ShimmerService) {
 
     this.http.get("../../assets/json/datasetSelector.json").subscribe((res) => {
 

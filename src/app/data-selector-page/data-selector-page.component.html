@@ -106,7 +106,7 @@
           <div *ngIf="currentContentType === contentType.ViewPoint">
             <button class="apply" [disabled]="!isAtLeastOneCheckboxSelected" [style.background]="
                 isAtLeastOneCheckboxSelected ? 'blue' : '#bbccdd'
-              " (click)="showDataSelector(); updateFooterString()" >
+              " (click)="showDataSelector(); updateFooterString(); shimmerEffect.shimmering()" >
               Apply Dataset
             </button>
 
