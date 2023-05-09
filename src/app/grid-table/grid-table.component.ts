@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
 import { ValueFormatterParams } from 'ag-grid-community';
+import { ShimmerService } from '../services/shimmer.service';
 
 @Component({
   selector: 'app-grid-table',
@@ -16,7 +17,7 @@ export class GridTableComponent {
   label: string = '$';
   // actualData = false;
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient, public shimmerEffect: ShimmerService) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     setTimeout(() => {
