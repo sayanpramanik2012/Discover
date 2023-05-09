@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ShimmerService } from '../services/shimmer.service';
 
 @Component({
   selector: 'app-run-btn',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./run-btn.component.scss']
 })
 export class RunBtnComponent {
+  constructor(public shimmerEffect: ShimmerService){}
 
 }
