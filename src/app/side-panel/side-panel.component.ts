@@ -23,12 +23,15 @@ interface ValueItem {
 export class SidePanelComponent{
   @Input() label!: string;
   @Output() panelClosed = new EventEmitter<void>();
-  // @Output() itemAdded = new EventEmitter();
   data: any = summaryData;
   filteredData: any;
   values: any = valuesData;
   filteredValues: string[] = [];
   selectButtonText!: string;
+  pan1 = true;
+
+  @Output() valueSelected = new EventEmitter<string>();
+
   ngOnChanges(): void {
     this.filteredData = this.data.data.find((item: { label: string }) => item.label === this.label);
     const valueItem = this.values.find(item => item.label === this.label);
@@ -49,29 +52,39 @@ export class SidePanelComponent{
     return this.filteredData.value.includes(value);
   }
 
-
-  showOverlay = false;
-
   showValues = false;
   addValue(): void {
-    this.showValues = !this.showValues;
-    this.showOverlay = this.showValues;
+    this.showValues = true;
+    this.pan1 = false;
+  }
+  back(): void{
+    this.pan1=true;
   }
 
 
   selectValue(value: string): void {
-    if (this.filteredData.value.indexOf(value) !== -1) {
+    const index = this.filteredData.value.indexOf(value);
+
+    if (index !== -1) {
+      this.filteredData.value.splice(index, 1); // Uncheck the checkbox, remove value from array
     } else {
-      this.filteredData.value.push(value);
+      this.filteredData.value.push(value); // Check the checkbox, add value to array
+    }
+
+    this.countChanged.emit(this.filteredData.value.length);
+    if (this.filteredData.value.length === 1) {
+      this.valueSelected.emit(this.filteredData.value[0]); // Emit the selected value
+    }
+    if (this.filteredData.value.length === 0) {
       this.showValues = false;
-      this.countChanged.emit(this.filteredData.value.length);
-      this.showOverlay = false;
     }
   }
+
 
   constructor(){}
 
   closePanel(): void {
     this.panelClosed.emit();
   }
+
 }

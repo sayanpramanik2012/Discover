@@ -1,0 +1,84 @@
+.bottom-bar {
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  // box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  animation: fadeOut 3s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.loading-spinner {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid #1e168b;
+  border-top-color: #999;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 2px;
+  margin-left: 25px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bottom-bar-text {
+  flex-grow: 1;
+  font-size: 22px;
+  font-weight: 600;
+  padding-left: 15px;
+  margin-left: 10px;
+}
+
+
+
+.bottom-bar-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.cancel-button {
+  background-color: transparent;
+  color: rgb(36, 22, 163);
+  border: 2px solid rgb(16, 13, 43); /* Add a solid border with a width of 2px and the color rgb(16, 13, 43) */
+  padding: 10px 30px;
+  margin-right: 20px;
+  margin-left: 15px;
+  cursor:pointer;
+  font-size: 15px;
+  
+  &:hover{
+    border: 2px solid rgb(16, 13, 43);
+    background-color: rgb(17, 3, 51);
+  }
+}
+
+.notify-later-text {
+  color: rgb(81, 81, 82);
+  text-decoration: underline;
+  margin-right: 15px;
+  font-size: 18px;
+ 
+}

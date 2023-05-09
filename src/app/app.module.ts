@@ -17,6 +17,10 @@ import { BrandBarComponent } from './brand-bar/brand-bar.component';
 import { GridTableComponent } from './grid-table/grid-table.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { SidePanelComponent } from './side-panel/side-panel.component';
+import { RunBtnComponent } from './run-btn/run-btn.component';
+import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
+
+
 
 @NgModule({
   declarations: [
@@ -29,6 +33,9 @@ import { SidePanelComponent } from './side-panel/side-panel.component';
     BrandBarComponent,
     GridTableComponent,
     SidePanelComponent,
+    RunBtnComponent,
+    BottomBarComponent,
+   
   ],
   imports: [
     BrowserModule,

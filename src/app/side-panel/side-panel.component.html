@@ -1,9 +1,14 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
 <div class="side-panel">
-
+  <button *ngIf="!pan1" class="back" (click)="back()">
+    <i class="fas fa-arrow-left"></i>
+  </button>
   <button class="close-button" (click)="closePanel()">X</button>
   <h3 class="head" > {{ label }}</h3>
-  <div class="overlay" *ngIf="showOverlay"></div>
-  <div class="selection-box">
+  <!-- <div class="overlay" *ngIf="showOverlay"></div> -->
+  <div *ngIf="pan1" class="selection-box">
     <h4>Selection</h4>
       <div class="h1">Includes total at all levels</div>
       <div class="h2">Data Selected
@@ -14,8 +19,8 @@
             <button (click)="addValue()">+</button>
         </ul></div>
       </div>
-      <div class="values-list-overlay" *ngIf="showOverlay"></div>
-        <ul *ngIf="showValues" class="values-list">Select data to add:
+      <!-- <div class="values-list-overlay" *ngIf="showOverlay"></div> -->
+        <ul *ngIf="showValues && !pan1" class="values-list">Select data to add:
           <ng-container *ngIf="filteredValues.length > 0; else noValues">
             <div *ngFor="let value of filteredValues" (click)="selectValue(value)" class="value" >
             <input type="checkbox" [checked]="isSelected(value)">
