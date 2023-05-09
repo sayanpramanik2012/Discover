@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Discover';
   dataSelected = false;
+  openSidePanel = false;
+  clickedLabel = '';
+
+  showPanel(label: string): void {
+    this.clickedLabel = label;
+    this.openSidePanel = true;
+  }
 }

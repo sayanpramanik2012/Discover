@@ -14,6 +14,7 @@ import { ReportPageComponent } from './report-page/report-page.component';
 import { AddButtonComponent } from './add-button/add-button.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrandBarComponent } from './brand-bar/brand-bar.component';
+import { SidePanelComponent } from './side-panel/side-panel.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { BrandBarComponent } from './brand-bar/brand-bar.component';
     AddButtonComponent,
     FooterComponent,
     BrandBarComponent,
+    SidePanelComponent,
   ],
   imports: [
     BrowserModule,
