@@ -14,6 +14,8 @@ import { ReportPageComponent } from './report-page/report-page.component';
 import { AddButtonComponent } from './add-button/add-button.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrandBarComponent } from './brand-bar/brand-bar.component';
+import { GridTableComponent } from './grid-table/grid-table.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import { BrandBarComponent } from './brand-bar/brand-bar.component';
     AddButtonComponent,
     FooterComponent,
     BrandBarComponent,
+    GridTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { BrandBarComponent } from './brand-bar/brand-bar.component';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    AgGridModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
