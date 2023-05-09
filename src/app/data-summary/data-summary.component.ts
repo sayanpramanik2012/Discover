@@ -1,4 +1,4 @@
-import { Component,  Input } from '@angular/core';
+import { Component, EventEmitter, Output, Input, OnChanges, SimpleChanges} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 // import * as data from '../../assets/jsondata/summary.json';
@@ -12,9 +12,12 @@ export class DataSummaryComponent {
   sharedDataSummary: string[] = [];
   prefixList: string[] = [];
   jsondata: any;
+
+  currentIndex!: number;
+  currentLabel!: string;
   data: any;
- 
- 
+
+
   constructor(private http: HttpClient,) {
 
     this.http.get("../../assets/jsondata/summary.json").subscribe((res) => {
@@ -37,7 +40,20 @@ export class DataSummaryComponent {
       // console.log("sidebar:",this.count);
     });
   }
-  
+
+  isClicked = false;
+  @Output() openSidePanel = new EventEmitter<boolean>();
+  @Output() labelClicked = new EventEmitter<string>();
+  onButtonClick(i: number): void {
+    this.isClicked = true;
+    this.currentIndex = i;
+    const label = this.data[i].label;
+    this.currentLabel = label;
+    console.log('Clicked label:', label);
+    this.isClicked = !this.isClicked;
+    this.openSidePanel.emit(true);
+    this.labelClicked.emit(label);
+  }
 
 
   ontest() {
