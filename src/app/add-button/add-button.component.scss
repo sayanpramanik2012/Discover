@@ -13,3 +13,35 @@
       padding:8px;
     }
 }
+
+
+.dropdown {
+position: fixed;
+top: 100px;
+right: 50px;
+display: flex;
+align-items: start;
+flex-direction: column;
+background-color: white;
+text-align: left;
+border: transparent;
+box-shadow: 0px 4px 8px 0px grey; 
+}
+
+.dropDown-symbol {
+padding-right: 25px;
+margin-top : 2px;
+width: 8px;
+height: 8px;
+}
+.dropDown-name {
+display: flex;
+width: 125px;
+padding: 8px 4px;
+background-color: white;
+border:transparent;
+cursor:pointer;
+&:hover {
+  background-color: #ccc;
+}
+}
