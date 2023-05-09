@@ -44,10 +44,7 @@ export class SidePanelComponent{
     const numSelected = this.filteredData.value.length;
   }
   @Output() countChanged = new EventEmitter<number>();
-  removeValue(index: number): void {
-    this.filteredData.value.splice(index, 1);
-    this.countChanged.emit(this.filteredData.value.length);
-  }
+
   isSelected(value: string): boolean {
     return this.filteredData.value.includes(value);
   }
@@ -63,22 +60,31 @@ export class SidePanelComponent{
 
 
   selectValue(value: string): void {
-    const index = this.filteredData.value.indexOf(value);
+  const index = this.filteredData.value.indexOf(value);
 
-    if (index !== -1) {
-      this.filteredData.value.splice(index, 1); // Uncheck the checkbox, remove value from array
-    } else {
-      this.filteredData.value.push(value); // Check the checkbox, add value to array
-    }
-
-    this.countChanged.emit(this.filteredData.value.length);
-    if (this.filteredData.value.length === 1) {
-      this.valueSelected.emit(this.filteredData.value[0]); // Emit the selected value
-    }
-    if (this.filteredData.value.length === 0) {
-      this.showValues = false;
-    }
+  if (index !== -1) {
+    this.filteredData.value.splice(index, 1); // Uncheck the checkbox, remove value from array
+  } else {
+    this.filteredData.value.push(value); // Check the checkbox, add value to array
   }
+
+  this.countChanged.emit(this.filteredData.value.length);
+
+  if (this.filteredData.value.length === 0) {
+    this.showValues = true;
+  }
+
+  if (this.filteredData.value.length === 1) {
+    this.valueSelected.emit(this.filteredData.value[0]); // Emit the selected value
+  }
+}
+removeValue(index: number): void {
+  this.filteredData.value.splice(index, 1);
+  this.countChanged.emit(this.filteredData.value.length);
+  if (this.filteredData.value.length === 1) {
+    this.valueSelected.emit(this.filteredData.value[0]); // Emit the selected value
+  }
+}
 
 
   constructor(){}
