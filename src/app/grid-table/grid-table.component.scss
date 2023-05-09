@@ -1,10 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
 @import 'node_modules/ag-grid-community/styles/ag-grid.css';
 @import 'node_modules/ag-grid-community/styles/ag-theme-alpine.css';
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+
+.ag-theme-alpine {
+    height: 100%;
   }
 
   .ag-theme-alpine{
