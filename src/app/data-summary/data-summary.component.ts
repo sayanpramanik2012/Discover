@@ -12,10 +12,10 @@ export class DataSummaryComponent {
   sharedDataSummary: string[] = [];
   prefixList: string[] = [];
   jsondata: any;
-
+  data: any;
   currentIndex!: number;
   currentLabel!: string;
-  data: any;
+  @Input() count!: number;
 
 
   constructor(private http: HttpClient,) {
@@ -41,6 +41,20 @@ export class DataSummaryComponent {
     });
   }
 
+  @Input() itemAdded!: any;
+  updatecount(): void {
+    if (this.count === 0) {
+      this.sharedDataSummary[this.currentIndex] = "select"
+    }
+    else {
+      this.sharedDataSummary[this.currentIndex] = this.count.toString() + (" ") + this.currentLabel;
+    }
+    console.log(this.count);
+    console.log(this.itemAdded);
+  }
+  ngOnChanges(changes: SimpleChanges) {
+    this.updatecount();
+  }
   isClicked = false;
   @Output() openSidePanel = new EventEmitter<boolean>();
   @Output() labelClicked = new EventEmitter<string>();
