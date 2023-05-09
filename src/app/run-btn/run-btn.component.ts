@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { ShimmerService } from '../services/shimmer.service';
+import { AgGridAngular } from 'ag-grid-angular';
 
 @Component({
   selector: 'app-run-btn',
@@ -7,6 +8,24 @@ import { ShimmerService } from '../services/shimmer.service';
   styleUrls: ['./run-btn.component.scss']
 })
 export class RunBtnComponent {
-  constructor(public shimmerEffect: ShimmerService){}
+  @Input() showRunButton!: boolean;
+  @Output() previewStatus = new EventEmitter<boolean>();
+  [x: string]: any;
 
+
+  constructor(public shimmerEffect: ShimmerService){}
+  isLoading = false;
+  bottomBarIsVisible: boolean = false;
+  // showRunButton = true;
+  actualData = false;
+ 
+  startTable() {
+ 
+    this.bottomBarIsVisible = true;
+    this.actualData = true;
+    this.previewStatus.emit(this.actualData);
+    setTimeout(() => {
+    this.bottomBarIsVisible = false;
+    }, 3000);
+  }   
 }
