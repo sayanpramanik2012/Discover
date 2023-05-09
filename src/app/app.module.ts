@@ -20,6 +20,7 @@ import { SidePanelComponent } from './side-panel/side-panel.component';
 import { RunBtnComponent } from './run-btn/run-btn.component';
 import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
     SidePanelComponent,
     RunBtnComponent,
     BottomBarComponent,
+   
   ],
   imports: [
     BrowserModule,
