@@ -1,12 +1,14 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { of, delay } from 'rxjs';
-
+import { Component, EventEmitter,Output } from '@angular/core';
+import { ShimmerService } from '../services/shimmer.service';
+import { delay } from 'rxjs/operators';
+import { of } from 'rxjs';
 @Component({
   selector: 'app-add-button',
   templateUrl: './add-button.component.html',
   styleUrls: ['./add-button.component.scss']
 })
 export class AddButtonComponent {
+  constructor(public shimmerEffect: ShimmerService){}
   isDropdownOpen = false;
   displayTable = false ;
   // showRunButton=false;
@@ -43,13 +45,16 @@ export class AddButtonComponent {
   }
   showTable(){
 
-    
+    of(this.shimmerEffect.shimmering()).pipe(
+      delay(1) // adjust the delay time as needed
+    ).subscribe(() => {
       this.displayTable = true;
       this.statusTableDisplay.emit(this.displayTable);
       this.statusRunButtonDisplay.emit(true);
       // this.showRunButton = true;
-    
+    });
     // this.displayTable= true;
     // this.statusTableDisplay.emit(this.displayTable)
   }
+
 }
