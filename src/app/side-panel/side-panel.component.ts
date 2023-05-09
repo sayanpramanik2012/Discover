@@ -23,13 +23,15 @@ interface ValueItem {
 export class SidePanelComponent{
   @Input() label!: string;
   @Output() panelClosed = new EventEmitter<void>();
-  // @Output() itemAdded = new EventEmitter();
   data: any = summaryData;
   filteredData: any;
   values: any = valuesData;
   filteredValues: string[] = [];
   selectButtonText!: string;
   pan1 = true;
+
+  @Output() valueSelected = new EventEmitter<string>();
+
   ngOnChanges(): void {
     this.filteredData = this.data.data.find((item: { label: string }) => item.label === this.label);
     const valueItem = this.values.find(item => item.label === this.label);
@@ -53,7 +55,6 @@ export class SidePanelComponent{
   showValues = false;
   addValue(): void {
     this.showValues = true;
-    // this.showOverlay = this.showValues;
     this.pan1 = false;
   }
   back(): void{
@@ -71,6 +72,9 @@ export class SidePanelComponent{
     }
 
     this.countChanged.emit(this.filteredData.value.length);
+    if (this.filteredData.value.length === 1) {
+      this.valueSelected.emit(this.filteredData.value[0]); // Emit the selected value
+    }
     if (this.filteredData.value.length === 0) {
       this.showValues = false;
     }
