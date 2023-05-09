@@ -5,7 +5,8 @@
             "value": [
                 "$"
             ],
-            "prefix": ""
+            "prefix": "",
+            "off": 0
         },
         {
             "label": "Products",
@@ -15,7 +16,8 @@
                 "Coffee",
                 "Milk"
             ],
-            "prefix": "of"
+            "prefix": "of",
+            "off": 1
         },
         {
             "label": "Markets",
@@ -23,7 +25,8 @@
                 "Total US",
                 "IND"
             ],
-            "prefix": "in"
+            "prefix": "in",
+            "off": 2
         },
         {
             "label": "Periods",
