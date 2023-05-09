@@ -16,7 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BrandBarComponent } from './brand-bar/brand-bar.component';
 import { GridTableComponent } from './grid-table/grid-table.component';
 import { AgGridModule } from 'ag-grid-angular';
-
+import { SidePanelComponent } from './side-panel/side-panel.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +28,7 @@ import { AgGridModule } from 'ag-grid-angular';
     FooterComponent,
     BrandBarComponent,
     GridTableComponent,
+    SidePanelComponent,
   ],
   imports: [
     BrowserModule,
