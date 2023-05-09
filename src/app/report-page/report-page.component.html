@@ -1,39 +1,40 @@
 <head>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  <div class="container-wrapper" style="padding-left:10px;">
-  
-  
-    <div style="width:100%;display:flex; justify-content: space-between;">
-      <div>
-        <input input class="report-header" type="text" [(ngModel)]="inputValue" placeholder="Untitled Report" value={{inputValue}} >
-      </div>
-      <div class="all-buttons">
-        <button type="button" class="material-symbols-outlined">undo</button>
-        <button type="button" class="material-symbols-outlined" style="margin-left: 10px;">redo</button>
-        <span class="vertical-line"></span>
-        <button type="button" class="material-symbols-outlined" style="margin-right: 10px;" >download</button>
-        <button type="button" class="material-symbols-outlined" style="margin-left: 10px;" >save</button>
-        <span class="vertical-line"></span>
-        <app-add-button
-          style="margin-right: 15px;"></app-add-button>
-          <button type="button" class="material-symbols-outlined" > more_horiz </button>
-      </div>
-    </div>
-    <div class="container-card">
-      <div style="display: flex; flex-direction: column; height: 100%;">
-        <div *ngIf="shimmerEffect.shimmerActive" class="shimmer"  ></div>
-        <div class="container-card-header">
-            <input class="tab-header" type="text" id="tab-header" value="Table-1">
-          <div>
-            <button type="button" class="material-symbols-outlined" style="margin-right:10px;"> expand_content </button>
-            <button type="button" class="material-symbols-outlined" > more_horiz </button>
-          </div>
-        </div>
-        <app-grid-table></app-grid-table>
-      </div>
-        </div>
-        </div>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<div class="container-wrapper" style="padding-left:10px;">
 
+
+  <div style="width:100%;display:flex; justify-content: space-between;">
+    <div>
+      <input input class="report-header" type="text" [(ngModel)]="inputValue" placeholder="Untitled Report" value={{inputValue}} >
+    </div>
+    <div class="all-buttons">
+      <button type="button" class="material-symbols-outlined">undo</button>
+      <button type="button" class="material-symbols-outlined" style="margin-left: 10px;">redo</button>
+      <span class="vertical-line"></span>
+      <button type="button" class="material-symbols-outlined" style="margin-right: 10px;" >download</button>
+      <button type="button" class="material-symbols-outlined" style="margin-left: 10px;" >save</button>
+      <span class="vertical-line"></span>
+      <app-add-button
+      (emitCardType)=" [containerName=$event, addContainer(containerName)]"
+        style="margin-right: 15px;"></app-add-button>
+        <button type="button" class="material-symbols-outlined" > more_horiz </button>
+    </div>
+  </div>
+  <div *ngFor="let a of containerCard" class="container-card">
+    <div *ngIf="a.containerName === 'Table'" style="display: flex; flex-direction: column; height: 100%;">
+      <div *ngIf="shimmerEffect.shimmerActive" class="shimmer"  ></div>
+      <div class="container-card-header">
+          <input class="tab-header" type="text" id="tab-header" value= '{{ a.tableName }}'>
+        <div>
+          <button type="button" class="material-symbols-outlined" style="margin-right:10px;"> expand_content </button>
+          <button type="button" class="material-symbols-outlined" > more_horiz </button>
+        </div>
+      </div>
+      <app-grid-table></app-grid-table>
+
+    </div>
+      </div>
+      </div>
