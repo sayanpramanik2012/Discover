@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ShimmerService } from '../services/shimmer.service';
 
 @Component({
   selector: 'app-report-page',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./report-page.component.scss']
 })
 export class ReportPageComponent {
+  constructor(public shimmerEffect: ShimmerService){}
   inputValue : string = '';
 
 }

@@ -1,7 +1,8 @@
 <app-brand-bar></app-brand-bar>
-<app-data-summary *ngIf="dataSelected"></app-data-summary>
+<app-data-summary *ngIf="dataSelected" [count]="count" (openSidePanel)="openSidePanel = true" (labelClicked)="showPanel($event)"></app-data-summary>
+<app-side-panel (countChanged)="updateCount($event)" (updated)="onUpdate()" *ngIf="openSidePanel" class="side-panel" [label]="clickedLabel" (panelClosed)="onPanelClosed()" ></app-side-panel>
 <app-report-page  *ngIf="dataSelected"></app-report-page>
-<app-footer (dataSelector)="[dataSelected=$event]"></app-footer> 
+<app-footer (dataSelector)="[dataSelected=$event]"></app-footer>
 
 
 
