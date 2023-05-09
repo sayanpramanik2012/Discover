@@ -1,2 +1,29 @@
 <div class="side-panel">
+
+  <button class="close-button" (click)="closePanel()">X</button>
+  <h3 class="head" > {{ label }}</h3>
+  <div class="overlay" *ngIf="showOverlay"></div>
+  <div class="selection-box">
+    <h4>Selection</h4>
+      <div class="h1">Includes total at all levels</div>
+      <div class="h2">Data Selected
+        <ul *ngIf="filteredData">
+            <ng-container *ngFor="let value of filteredData.value; let i = index">
+              <span class="value-box">{{value}} <span class="close-button" (click)="removeValue(i)">×</span></span>
+            </ng-container>
+            <button (click)="addValue()">+</button>
+        </ul></div>
+      </div>
+      <div class="values-list-overlay" *ngIf="showOverlay"></div>
+        <ul *ngIf="showValues" class="values-list">Select data to add:
+          <ng-container *ngIf="filteredValues.length > 0; else noValues">
+            <div *ngFor="let value of filteredValues" (click)="selectValue(value)" class="value" >
+            <input type="checkbox" [checked]="isSelected(value)">
+            <span>{{ value }}</span>
+    </div>
+          </ng-container>
+          <ng-template #noValues>
+            No values found
+          </ng-template>
+        </ul>
 </div>
