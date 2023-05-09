@@ -10,3 +10,73 @@
   box-sizing: border-box;
   z-index:999;
 }
+.value-box {
+  display: inline-block;
+  background-color: rgb(166, 190, 228);
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  .close-button {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+}
+.values-list {
+  background-color: #ececec;
+  padding: 10px;
+  margin-top: 50px;
+  position: absolute;
+  top: 17%;
+  left: 10%;
+  transform: translate(10%, -50%);
+  z-index: 100;
+  &:hover{
+    cursor:pointer
+  }
+}
+.value{
+  background-color:#ffffff;
+  padding-top: 5px;
+  padding-left: 2px;
+}
+
+.close-button {
+  background-color: #ffffff;
+  margin-left: 300px;
+  border: none;
+  cursor: pointer;
+}
+.selection-box {
+  margin-top: 50px;
+  padding: 10px;
+  background-color: #ececec;
+  &h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+.h2{
+  margin-top: 20px;
+  padding: 10px;
+  background-color: hsl(0, 0%, 100%);
+  border-left: 5px solid #ccc;
+}
+.head{
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top:20px;
+  left: 150px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 99;
+}
