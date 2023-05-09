@@ -6,12 +6,10 @@ describe('BottomBarComponent', () => {
   let component: BottomBarComponent;
   let fixture: ComponentFixture<BottomBarComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ BottomBarComponent ]
-    })
-    .compileComponents();
-
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [BottomBarComponent]
+    });
     fixture = TestBed.createComponent(BottomBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
