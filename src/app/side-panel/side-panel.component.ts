@@ -29,6 +29,7 @@ export class SidePanelComponent{
   values: any = valuesData;
   filteredValues: string[] = [];
   selectButtonText!: string;
+  pan1 = true;
   ngOnChanges(): void {
     this.filteredData = this.data.data.find((item: { label: string }) => item.label === this.label);
     const valueItem = this.values.find(item => item.label === this.label);
@@ -54,8 +55,12 @@ export class SidePanelComponent{
 
   showValues = false;
   addValue(): void {
-    this.showValues = !this.showValues;
-    this.showOverlay = this.showValues;
+    this.showValues = true;
+    // this.showOverlay = this.showValues;
+    this.pan1 = false;
+  }
+  back(): void{
+    this.pan1=true;
   }
 
 
@@ -63,9 +68,9 @@ export class SidePanelComponent{
     if (this.filteredData.value.indexOf(value) !== -1) {
     } else {
       this.filteredData.value.push(value);
-      this.showValues = false;
+      // this.showValues = false;
       this.countChanged.emit(this.filteredData.value.length);
-      this.showOverlay = false;
+      // this.showOverlay = false;
     }
   }
 
