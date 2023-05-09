@@ -24,7 +24,7 @@
     </div>
     <div class="container-card">
       <div style="display: flex; flex-direction: column; height: 100%;">
-        <div></div>
+        <div *ngIf="shimmerEffect.shimmerActive" class="shimmer"  ></div>
         <div class="container-card-header">
             <input class="tab-header" type="text" id="tab-header" value="Table-1">
           <div>
