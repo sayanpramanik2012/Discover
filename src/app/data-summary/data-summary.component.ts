@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output, Input, OnChanges, SimpleChanges} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { __values } from 'tslib';
 
 // import * as data from '../../assets/jsondata/summary.json';
 @Component({
@@ -16,7 +17,7 @@ export class DataSummaryComponent {
   currentIndex!: number;
   currentLabel!: string;
   @Input() count!: number;
-
+@Input() singleVal!: string;
 
   constructor(private http: HttpClient,) {
 
@@ -44,7 +45,10 @@ export class DataSummaryComponent {
   @Input() itemAdded!: any;
   updatecount(): void {
     if (this.count === 0) {
-      this.sharedDataSummary[this.currentIndex] = "select"
+      this.sharedDataSummary[this.currentIndex] = "select";
+    }
+    else if (this.count ===1){
+      this.sharedDataSummary[this.currentIndex] = this.singleVal;
     }
     else {
       this.sharedDataSummary[this.currentIndex] = this.count.toString() + (" ") + this.currentLabel;

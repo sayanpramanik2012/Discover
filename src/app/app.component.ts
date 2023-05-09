@@ -22,6 +22,11 @@ export class AppComponent {
     this.clickedLabel = label;
   }
   // isPanelOpen = true;
+  singleVal="many";
+  handleValueSelected(value: string): void {
+    this.singleVal =value;
+    console.log("Selected value:", this.singleVal);
+  }
 
   onPanelClosed(): void {
     this.openSidePanel = false;

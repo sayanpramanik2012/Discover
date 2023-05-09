@@ -1,5 +1,10 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
 <div class="side-panel">
-  <button *ngIf="!pan1" class="back" (click)="back()">Back</button>
+  <button *ngIf="!pan1" class="back" (click)="back()">
+    <i class="fas fa-arrow-left"></i>
+  </button>
   <button class="close-button" (click)="closePanel()">X</button>
   <h3 class="head" > {{ label }}</h3>
   <!-- <div class="overlay" *ngIf="showOverlay"></div> -->
