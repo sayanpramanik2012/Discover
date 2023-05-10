@@ -3,10 +3,3 @@
 <app-side-panel (sidePanelWidth)="sidePanelWidth($event)" (valueSelected)="handleValueSelected($event)" (countChanged)="updateCount($event)" (updated)="onUpdate()" *ngIf="openSidePanel" class="side-panel" [label]="clickedLabel" (panelClosed)="onPanelClosed()" ></app-side-panel>
 <app-report-page  *ngIf="dataSelected" [width]="width"></app-report-page>
 <app-footer (dataSelector)="[dataSelected=$event]"></app-footer>
-
-
-
-
-
-
-

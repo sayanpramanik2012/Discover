@@ -26,6 +26,7 @@ export class SidePanelComponent{
   data: any = summaryData;
   filteredData: any;
   values: any = valuesData;
+  num: number=0;
   filteredValues: string[] = [];
   selectButtonText!: string;
   pan1 = true;
@@ -36,10 +37,8 @@ export class SidePanelComponent{
 
   @Output() valueSelected = new EventEmitter<string>();
   ngAfterViewInit() {
-    const sidePanelWidth = this.sidePanelRef.nativeElement.offsetWidth; // Get the width of the side panel
+    const sidePanelWidth = this.sidePanelRef.nativeElement.offsetWidth;
     this.sidePanelWidth.emit(sidePanelWidth);
-    // Use the width value as needed
-    console.log('Side panel width:', sidePanelWidth);
   }
 
   ngOnChanges(): void {
@@ -49,20 +48,37 @@ export class SidePanelComponent{
       this.filteredValues = valueItem.data;
     }
     this.updateSelectButtonText();
-  }
-  updateSelectButtonText(): void {
-    const numSelected = this.filteredData.value.length;
+    this.num = this.filteredData.value.length;
   }
   @Output() countChanged = new EventEmitter<number>();
 
   isSelected(value: string): boolean {
+
     return this.filteredData.value.includes(value);
+  }
+
+  selectAllValues(): void {
+    const allSelected = this.filteredData.value.length === this.filteredValues.length;
+    if (allSelected) {
+      this.filteredData.value = []; // Deselect all values
+    } else {
+      this.filteredData.value = [...this.filteredValues]; // Select all values
+    }
+    this.updateSelectButtonText();
+    this.countChanged.emit(this.filteredData.value.length);
+    this.num = this.filteredData.value.length;
+  }
+
+  updateSelectButtonText(): void {
+    const allSelected = this.filteredData.value.length === this.filteredValues.length;
+    this.selectButtonText = allSelected ? 'Deselect All' : 'Select All';
   }
 
   showValues = false;
   addValue(): void {
     this.showValues = true;
     this.pan1 = false;
+
   }
   back(): void{
     this.pan1=true;
@@ -79,6 +95,7 @@ export class SidePanelComponent{
   }
 
   this.countChanged.emit(this.filteredData.value.length);
+  this.num=this.filteredData.value.length;
 
   if (this.filteredData.value.length === 0) {
     this.showValues = true;
@@ -91,6 +108,7 @@ export class SidePanelComponent{
 removeValue(index: number): void {
   this.filteredData.value.splice(index, 1);
   this.countChanged.emit(this.filteredData.value.length);
+  this.num=this.filteredData.value.length;
   if (this.filteredData.value.length === 1) {
     this.valueSelected.emit(this.filteredData.value[0]); // Emit the selected value
   }

@@ -1,19 +1,19 @@
 [
   {
     "label": "Markets",
-    "data": ["US","Thialand","Total US",
+    "data": ["US","Thialand","Omni Sellers","Total US",
     "IND"]
   },
   {
     "label": "Products",
-    "data": ["Food","BEER","Beer",
+    "data": ["Food","Beer",
     "Coco cola",
     "Coffee",
     "Milk"]
   },
   {
     "label": "Periods",
-    "data": ["14 WEEKS","10 WEEKS","13 4 WEEKS"]
+    "data": ["14 Weeks","10 Weeks","13 4 Weeks","8 4 Weeks","8 Weeks","14 1 Weeks","10 5 Weeks","10 2 Weeks"]
   },
   {
     "label": "Facts",
