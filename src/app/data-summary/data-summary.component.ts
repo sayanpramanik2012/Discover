@@ -48,6 +48,10 @@ export class DataSummaryComponent {
       this.sharedDataSummary[this.currentIndex] = "select";
     }
     else if (this.count ===1){
+      if (this.singleVal ==="many"){
+      this.sharedDataSummary[this.currentIndex]="many";
+      }
+      else
       this.sharedDataSummary[this.currentIndex] = this.singleVal;
     }
     else {
