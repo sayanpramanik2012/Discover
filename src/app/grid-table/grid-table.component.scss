@@ -2,11 +2,12 @@
 @import 'node_modules/ag-grid-community/styles/ag-theme-alpine.css';
 
 
-.ag-theme-alpine {
-    height: 100%;
-  }
+// .ag-theme-alpine {
+//     height: 100px;
+//   }
 
   .ag-theme-alpine{
+    height: 100%;
     --ag-header-background-color: white;
     --ag-odd-row-background-color: white;
     --ag-background-color: white;

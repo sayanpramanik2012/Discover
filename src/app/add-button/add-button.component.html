@@ -4,7 +4,7 @@
 </head>
 <button type="button" class="material-symbols-outlined" [disabled]="shimmerEffect.shimmerActive" (click)="toggleDropdown()">add_chart</button>
 
-<div *ngIf="isDropdownOpen" class="dropdown">
+<div *ngIf="isDropdownOpen" class="dropdown" [style.marginRight.px]="width">
     <span *ngFor="let button of buttons" class="dropDown-name" (click)="handleButtonClick(button.name)">
         <span class="dropDown-symbol"><i class="{{button.icon}}"></i></span>
         <span>{{ button.name}}</span></span>
