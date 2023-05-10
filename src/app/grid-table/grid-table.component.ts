@@ -27,7 +27,7 @@ export class GridTableComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     setTimeout(() => {
       this.agGrid.api.redrawRows();
-    }, 3000);
+    }, 2500);
   }
 
   test() {
