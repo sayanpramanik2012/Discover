@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, count } from 'rxjs';
 import summaryData from '../../assets/jsondata/summary.json';
@@ -30,7 +30,17 @@ export class SidePanelComponent{
   selectButtonText!: string;
   pan1 = true;
 
+  @Output() sidePanelWidth = new EventEmitter<number>();
+  @ViewChild('sidePanel') sidePanelRef!: ElementRef;
+
+
   @Output() valueSelected = new EventEmitter<string>();
+  ngAfterViewInit() {
+    const sidePanelWidth = this.sidePanelRef.nativeElement.offsetWidth; // Get the width of the side panel
+    this.sidePanelWidth.emit(sidePanelWidth);
+    // Use the width value as needed
+    console.log('Side panel width:', sidePanelWidth);
+  }
 
   ngOnChanges(): void {
     this.filteredData = this.data.data.find((item: { label: string }) => item.label === this.label);
@@ -91,6 +101,7 @@ removeValue(index: number): void {
 
   closePanel(): void {
     this.panelClosed.emit();
+    this.sidePanelWidth.emit(0);
   }
 
 }
