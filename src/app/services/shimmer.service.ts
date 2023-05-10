@@ -7,6 +7,8 @@ export class ShimmerService {
   shimmerActive: boolean=false;
   actualData: boolean = false;
   displayTable: boolean = false;
+  showRunButton: boolean=true;
+  bottomBarIsVisible: boolean=false;
  
 
   constructor() { }
@@ -15,7 +17,7 @@ export class ShimmerService {
   
     setTimeout(()=> {
       this.shimmerActive=false;
-    }, 3000
+    }, 2500
     )
     console.log("dummy")
   }
@@ -24,5 +26,7 @@ export class ShimmerService {
     this.displayTable =true;
     this.actualData=false;
     this.shimmerActive=false;
+    this.showRunButton=true;
+    this.bottomBarIsVisible=false;
   }
 }
