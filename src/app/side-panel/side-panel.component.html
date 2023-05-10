@@ -1,7 +1,7 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
-<div class="side-panel">
+<div [ngClass]="'side-panel'" #sidePanel>
   <button *ngIf="!pan1" class="back" (click)="back()">
     <i class="fas fa-arrow-left"></i>
   </button>

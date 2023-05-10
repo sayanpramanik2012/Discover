@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ShimmerService } from '../services/shimmer.service';
 import { users } from 'src/assets/json/users';
 
@@ -9,7 +9,7 @@ import { users } from 'src/assets/json/users';
 })
 export class ReportPageComponent { 
   showRunButton = true;
-
+  @Input() width!: number;
   constructor(public shimmerEffect: ShimmerService) { }
   inputValue: string = '';
   containerName: string = '';
