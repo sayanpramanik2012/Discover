@@ -17,7 +17,7 @@ export class AppComponent {
 
   sidePanelWidth(sidePanel:number):void {
     this.width=sidePanel;
-    console.log("SidePanel:",this.width);
+  ;
   }
 
   showPanel(label: string): void {
