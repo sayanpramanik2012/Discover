@@ -29,6 +29,7 @@
       font-size: 20px;
       height: 30px;
       width: 30px;
+      cursor: pointer;
       &:hover{
         background-color: rgb(211, 204, 204);
       }
@@ -43,6 +44,7 @@
       color: rgb(71, 70, 70);
       background-size: cover;
       padding: 5px; /* Add padding for equal spacing */
+      cursor: pointer;
       
       &:hover {
         background-color: rgb(211, 204, 204);
@@ -236,6 +238,7 @@
     height: 24px;
     width: 24px;
     display: inline-block;
+    cursor: pointer;
     
   }
   
@@ -270,13 +273,14 @@
     width: 80px;
     // margin-top: -90px;
     // margin-right: 15px;
-    padding: 9px 15px; 
+    padding: 11px 15px; 
     margin-bottom: 18px; 
+    border: none;
     // height: 25px;
     cursor:pointer;
     margin: 3px;
     &:hover{
-      padding: 9px 15px; 
+      padding: 11px 15px; 
       background-color: rgb(223, 218, 218);
         // font-weight: bold;
     }
@@ -289,7 +293,7 @@
     width: 120px;
     // margin-top: -90px;
     margin-right: 15px;
-    padding: 9px 15px;  
+    padding: 11px 15px;  
     border: none; 
     cursor:pointer;
     position: relative;
