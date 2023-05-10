@@ -87,15 +87,19 @@
     }
 }
 
+
+
+.container-card-inner {
+  position: relative;
+  overflow: hidden;
+}
+
 .shimmer {
   position: absolute;
-  top: 133px;
-  bottom: 150px;
-  left: 20px;
-  right: 20px;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  // height: 600px;
   background: linear-gradient(to right, #f0f0f0 0%, #dedede 20%, #f0f0f0 40%);
   background-size: 1000px 100%;
   animation: shimmer 1s infinite linear forwards;
@@ -111,11 +115,9 @@
 }
 
 .shimmer.active {
- 
   overflow-y: hidden;
 }
 
-
-body{
+body {
   overflow-x: hidden;
 }

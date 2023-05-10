@@ -3,7 +3,7 @@
       class="run-button"
       [disabled]="shimmerEffect.shimmerActive"
       [style.background]="shimmerEffect.shimmerActive ? '#bbccdd' : 'blue'"
-     
+      *ngIf="showRunButton"
       (click)="startTable(); shimmerEffect.shimmering()"
     >
       <i class="fa fa-caret-right fa-lg" style="padding-right: 5px"></i>Run
