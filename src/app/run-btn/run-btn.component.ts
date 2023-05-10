@@ -8,6 +8,7 @@ import { AgGridAngular } from 'ag-grid-angular';
   styleUrls: ['./run-btn.component.scss']
 })
 export class RunBtnComponent {
+  @Input() width!: number;
   @Input() showRunButton!: boolean;
   @Output() previewStatus = new EventEmitter<boolean>();
   [x: string]: any;

@@ -1,4 +1,4 @@
-import { Component, EventEmitter,Output } from '@angular/core';
+import { Component, EventEmitter,Input,Output } from '@angular/core';
 import { ShimmerService } from '../services/shimmer.service';
 import { delay } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -16,6 +16,7 @@ export class AddButtonComponent {
   @Output() statusTableDisplay = new EventEmitter<boolean>();
   @Output() statusRunButtonDisplay = new EventEmitter<boolean>();
   @Output() emitCardType = new EventEmitter<string>();
+  @Input() width!: number;
   buttons = [
     { name: 'Table', icon: 'fa fa-table' },
     { name: 'Line Chart', icon: 'fa fa-line-chart' },
