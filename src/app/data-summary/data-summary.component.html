@@ -4,7 +4,9 @@
     <span class="currency"
     mat-button-close
     [class.clicked]="isClicked"
+    [class.disabled]="shimmerEffect.shimmerActive"
     (click)="onButtonClick(index);"
+    
       ><b> {{ sharedDataSummary[i] }} </b></span>
   </span>
 

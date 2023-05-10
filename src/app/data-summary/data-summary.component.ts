@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output, Input, OnChanges, SimpleChanges} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { __values } from 'tslib';
+import { ShimmerService } from '../services/shimmer.service';
 
 // import * as data from '../../assets/jsondata/summary.json';
 @Component({
@@ -19,7 +20,7 @@ export class DataSummaryComponent {
   @Input() count!: number;
 @Input() singleVal!: string;
 
-  constructor(private http: HttpClient,) {
+  constructor(private http: HttpClient, public shimmerEffect: ShimmerService) {
 
     this.http.get("../../assets/jsondata/summary.json").subscribe((res) => {
 

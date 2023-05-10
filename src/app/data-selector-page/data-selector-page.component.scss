@@ -8,14 +8,17 @@
     left: 0;
     right: 0;
     margin: auto;
-    width: 33%;
+    width: 32%;
     height: 77%;
-    border-radius: 4px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
     .head {
     
       font-weight: bold;
-      font-size: 22px;
-      padding-top: 3%;
+      font-size: 19px;
+      padding-top: 4%;
+      font-family: Arial, sans-serif; 
+      color: rgb(63, 62, 62);
       // padding: 3% 5%;
     }
 
@@ -32,18 +35,20 @@
     }
     .cut {
       position: absolute;
-      top: 3%;
+      top: 2%;
       right: 10px;
       height: 30px;
       width: 30px;
-      font-size: 20px;
+      font-size: 18px;
+      color: rgb(71, 70, 70);
       background-size: cover;
-      // padding: 10px;
-      &:hover{
+      padding: 5px; /* Add padding for equal spacing */
+      
+      &:hover {
         background-color: rgb(211, 204, 204);
       }
-  
     }
+    
   
   }
   .report-header {
@@ -111,8 +116,9 @@
     .container {
       display: flex;
       align-items: center;
-      border: 1px solid rgb(146, 140, 140);
+      border: 1px solid rgb(197, 191, 191);
       margin: 15px 18px;
+      border-radius: 3px;
     }
 
     .inside-container{
@@ -128,9 +134,10 @@
   
     &-title {
       display: inline-block;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: bold;
       margin-bottom: 9px;
+      font-family: Arial, sans-serif; 
       
       
     }
@@ -138,11 +145,13 @@
     &-title-small {
       font-size: 16px;
       padding-left: 10px;
+      color: rgb(48, 47, 47);
     }
   
     &-description {
-      font-size: 15px;
+      font-size: 13px;
       padding-top: 18px;
+      font-family: Arial, sans-serif; 
       
     }
   }
@@ -223,7 +232,7 @@
 
   .checkbox1 {
     border-radius: 50%;
-    border: 2px solid black;
+    border: 1.5px solid rgb(92, 91, 91);
     height: 24px;
     width: 24px;
     display: inline-block;
