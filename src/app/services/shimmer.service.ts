@@ -5,8 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class ShimmerService {
   shimmerActive: boolean=false;
-  displayTable: boolean = false;
   actualData: boolean = false;
+  displayTable: boolean = false;
+ 
 
   constructor() { }
   shimmering(){
@@ -17,5 +18,11 @@ export class ShimmerService {
     }, 3000
     )
     console.log("dummy")
+  }
+
+  onCancel(){
+    this.displayTable =true;
+    this.actualData=false;
+    this.shimmerActive=false;
   }
 }
