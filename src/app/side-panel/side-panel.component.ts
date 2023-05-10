@@ -50,16 +50,28 @@ export class SidePanelComponent{
     this.updateSelectButtonText();
     this.num = this.filteredData.value.length;
   }
-  updateSelectButtonText(): void {
-    const count = this.filteredData.value.length;
-  }
   @Output() countChanged = new EventEmitter<number>();
 
   isSelected(value: string): boolean {
 
     return this.filteredData.value.includes(value);
+  }
 
+  selectAllValues(): void {
+    const allSelected = this.filteredData.value.length === this.filteredValues.length;
+    if (allSelected) {
+      this.filteredData.value = []; // Deselect all values
+    } else {
+      this.filteredData.value = [...this.filteredValues]; // Select all values
+    }
+    this.updateSelectButtonText();
+    this.countChanged.emit(this.filteredData.value.length);
+    this.num = this.filteredData.value.length;
+  }
 
+  updateSelectButtonText(): void {
+    const allSelected = this.filteredData.value.length === this.filteredValues.length;
+    this.selectButtonText = allSelected ? 'Deselect All' : 'Select All';
   }
 
   showValues = false;

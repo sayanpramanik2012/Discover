@@ -10,6 +10,24 @@
   box-sizing: border-box;
   z-index:999;
 }
+.head{
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  top:20px;
+  left: 30px;
+}
+.back{
+  position: absolute;
+  border: none;
+  background: none;
+  font-size: inherit;
+  cursor: pointer;
+}
 .value-box {
   display: inline-block;
   background-color: rgb(166, 190, 228);
@@ -21,25 +39,18 @@
     cursor: pointer;
   }
 }
-.back{
-  position: fixed;
-  border: none;
-  background: none;
-  font-size: inherit;
-  cursor: pointer;
-}
 .values-list {
   background-color: #ececec;
   padding: 10px;
   position: relative;
   z-index: 100;
   display: block;
-    max-width: 240px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    color: var(--color-text-primary);
-    padding: 8px 0;
+  max-width: 240px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--color-text-primary);
+  padding: 8px 0;
   &:hover{
     cursor:pointer
   }
@@ -49,7 +60,11 @@
   margin-bottom: 20px;
   border: none;
   background-color: transparent;
-  cursor: pointer;
+  color: #2d6df6;
+  text-decoration: underline;
+  &:hover{
+    cursor: pointer;
+  }
 }
 .value{
   background-color:#ffffff;
@@ -79,12 +94,23 @@
   background-color: #ffffff;
   border: none;
   cursor: pointer;
-  margin-left: 300px;
+  margin-left: 260px;
+}
+.icon-dot{
+  margin-right: 10px;
 }
 .selection-box {
   margin-top: 50px;
   padding: 10px;
   background-color: #ececec;
+  &-p2{
+    margin-top: 50px;
+    padding: 10px;
+    background-color: #ececec;
+    &:hover{
+      background-color: #ececec;
+    }
+  }
   & h4 {
     font-size: 16px;
     font-weight: 700;
@@ -125,25 +151,41 @@
   background-color: hsl(0, 0%, 100%);
   border-left: 3px solid #b1afaf;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  &-p2{
+    border-radius: 1px;
+    position: relative;
+    font-family: 'Trebuchet MS', sans-serif;
+    padding: 10px;
+    font-size: 15px;
+    background-color: #F2F2F2;
+    border-bottom: 3px solid #c5c3c3;
+    &:hover{
+      background-color: #E6E6E6;
+    }
+    & input[type="checkbox"] {
+      margin-right: 5px;
+    }
+  }
 }
-.head{
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  top:20px;
-  left: 150px;
+.bold {
+  font-weight: bold;
 }
 .value-box-p2 {
   display: inline-block;
   background-color: #BDD1FC;
-  padding: 2px;
-  margin: 5px;
+  padding: 3px;
+  padding-left: 5px;
+  margin: 2px;
+  margin-top: 10px;
   border-radius: 5px;
+  font-size: 14px;
   .close-button-p2 {
     margin-left: 5px;
     cursor: pointer;
   }
+}
+.selected-value {
+  background-color: #E6E6E6; /* Change this to the desired background color */
 }
 
 .h1 {
@@ -173,7 +215,7 @@
     margin-top: 12px;
     cursor: pointer;
 }
-h4-p2 {
+.h4-p2 {
   display: flex;
   align-items: center;
 }
@@ -184,4 +226,8 @@ h4-p2 {
   color: rgb(0, 0, 0);
   padding: 1px 1px;
   margin-left: 6px
+}
+.checkbox{
+  padding: 8px;
+
 }

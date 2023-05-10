@@ -6,10 +6,14 @@
   <button *ngIf="!pan1" class="back" (click)="back()">
     <i class="fas fa-arrow-left"></i>
   </button>
-  <button class="close-sidepanel" (click)="closePanel()"><span class="material-symbols-outlined">
+  <button class="close-sidepanel" (click)="closePanel()"><span class="material-symbols-outlined icon-dot">
+    more_horiz
+    </span><span class="material-symbols-outlined">
     close
     </span></button>
-  <h3 class="head">{{ label }}</h3>
+  <h3 class="head">{{ label }} <span class="material-symbols-outlined icon-expand">
+    expand_more
+    </span></h3>
   <div *ngIf="pan1" class="selection-box">
     <h4> <span class="material-symbols-outlined icon-expand">
       expand_more
@@ -31,7 +35,7 @@
 
 
 <div *ngIf="showValues && !pan1">
-  <div class="selection-box">
+  <div class="selection-box-p2">
     <div class="h4-p2">Selected<span class="selected-label"> {{num}} </span>
       <span class="h1-p2">Σ</span></div>
 
@@ -43,13 +47,14 @@
         </ul></div>
       </div>
 
-      <button class="All">
-        Select All</button>
-      <ul class="values-list">
+      <button class="All"(click)="selectAllValues()">
+        {{ selectButtonText }}
+      </button>
+      <ul >
         <ng-container *ngIf="filteredValues.length > 0; else noValues">
-          <div *ngFor="let value of filteredValues" (click)="selectValue(value)" >
-            <input type="checkbox" [checked]="isSelected(value)">
-            <span>{{ value }}</span>
+          <div *ngFor="let value of filteredValues" (click)="selectValue(value)" [ngClass]="{ 'selected-value': isSelected(value) }" class="h2-p2" >
+            <input type="checkbox" [checked]="isSelected(value)" class="checkbox" >
+            <span [ngClass]="{ 'bold': isSelected(value) }">{{ value }}</span>
           </div>
         </ng-container>
         <ng-template #noValues>

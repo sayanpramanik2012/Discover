@@ -10,14 +10,13 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dial
 export class AppComponent {
   title = 'Project_demo';
   buttonVisible = true;
-  dataSelected = true;
-  openSidePanel = true;
+  dataSelected = false;
+  openSidePanel = false;
   clickedLabel = '';
   width =0;
 
   sidePanelWidth(sidePanel:number):void {
     this.width=sidePanel;
-  ;
   }
 
   showPanel(label: string): void {
