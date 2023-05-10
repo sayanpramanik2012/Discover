@@ -10,7 +10,6 @@
     close
     </span></button>
   <h3 class="head">{{ label }}</h3>
-  <!-- <div class="overlay" *ngIf="showOverlay"></div> -->
   <div *ngIf="pan1" class="selection-box">
     <h4> <span class="material-symbols-outlined icon-expand">
       expand_more
@@ -28,8 +27,37 @@
     </ul>
     <button class="add" (click)="addValue()">+Add</button>
   </div>
-  <!-- <div class="values-list-overlay" *ngIf="showOverlay"></div> -->
-  <ul *ngIf="showValues && !pan1" class="values-list">Select data to add:
+
+
+
+<div *ngIf="showValues && !pan1">
+  <div class="selection-box">
+    <div class="h4-p2">Selected<span class="selected-label"> {{num}} </span>
+      <span class="h1-p2">Σ</span></div>
+
+      <div >
+        <ul *ngIf="filteredData">
+            <ng-container *ngFor="let value of filteredData.value; let i = index">
+              <span class="value-box-p2">{{value}} <span class="close-button-p2" (click)="removeValue(i)">×</span></span>
+            </ng-container>
+        </ul></div>
+      </div>
+
+      <button class="All">
+        Select All</button>
+      <ul class="values-list">
+        <ng-container *ngIf="filteredValues.length > 0; else noValues">
+          <div *ngFor="let value of filteredValues" (click)="selectValue(value)" >
+            <input type="checkbox" [checked]="isSelected(value)">
+            <span>{{ value }}</span>
+          </div>
+        </ng-container>
+        <ng-template #noValues>
+          No values found
+        </ng-template>
+      </ul>
+      </div>
+  <!-- <ul *ngIf="showValues && !pan1" class="values-list">Select data to add:
     <ng-container *ngIf="filteredValues.length > 0; else noValues">
       <div *ngFor="let value of filteredValues" (click)="selectValue(value)" class="value">
         <input type="checkbox" [checked]="isSelected(value)">
@@ -39,5 +67,5 @@
     <ng-template #noValues>
       No values found
     </ng-template>
-  </ul>
+  </ul> -->
 </div>
