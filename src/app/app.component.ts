@@ -13,6 +13,12 @@ export class AppComponent {
   dataSelected = false;
   openSidePanel = false;
   clickedLabel = '';
+  width =0;
+
+  sidePanelWidth(sidePanel:number):void {
+    this.width=sidePanel;
+  ;
+  }
 
   showPanel(label: string): void {
     this.clickedLabel = label;
