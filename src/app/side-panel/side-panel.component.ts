@@ -119,6 +119,7 @@ removeValue(index: number): void {
 
   closePanel(): void {
     this.panelClosed.emit();
+    console.log(this.panelClosed);
     this.sidePanelWidth.emit(0);
   }
 
