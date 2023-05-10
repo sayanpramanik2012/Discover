@@ -1,6 +1,7 @@
 <div class="content-container">
     <button
       class="run-button"
+      [style.marginRight.px]="width"
       [disabled]="shimmerEffect.shimmerActive"
       [style.background]="shimmerEffect.shimmerActive ? '#bbccdd' : 'blue'"
       *ngIf="showRunButton"

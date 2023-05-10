@@ -2,7 +2,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
-<div class="side-panel">
+<div [ngClass]="'side-panel'" #sidePanel>
   <button *ngIf="!pan1" class="back" (click)="back()">
     <i class="fas fa-arrow-left"></i>
   </button>
