@@ -1,34 +1,43 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <div class="side-panel">
   <button *ngIf="!pan1" class="back" (click)="back()">
     <i class="fas fa-arrow-left"></i>
   </button>
-  <button class="close-button" (click)="closePanel()">X</button>
-  <h3 class="head" > {{ label }}</h3>
+  <button class="close-sidepanel" (click)="closePanel()"><span class="material-symbols-outlined">
+    close
+    </span></button>
+  <h3 class="head">{{ label }}</h3>
   <!-- <div class="overlay" *ngIf="showOverlay"></div> -->
   <div *ngIf="pan1" class="selection-box">
-    <h4>Selection</h4>
-      <div class="h1">Includes total at all levels</div>
-      <div class="h2">Data Selected
-        <ul *ngIf="filteredData">
-            <ng-container *ngFor="let value of filteredData.value; let i = index">
-              <span class="value-box">{{value}} <span class="close-button" (click)="removeValue(i)">×</span></span>
-            </ng-container>
-            <button (click)="addValue()">+</button>
-        </ul></div>
+    <h4> <span class="material-symbols-outlined icon-expand">
+      expand_more
+      </span><span class="selection">Selection</span>
+      <button class="material-symbols-outlined icon-menu">menu</button>
+      </h4>
+    <div class="h1">Sum Σ</div>
+    <ul *ngIf="filteredData">
+      <ng-container *ngFor="let value of filteredData.value; let i = index">
+        <div class="h2">
+          <span>{{ value }}</span>
+          <span class="close-button" (click)="removeValue(i)"><span class="material-symbols-outlined icon-delete">delete</span></span>
+        </div>
+      </ng-container>
+    </ul>
+    <button class="add" (click)="addValue()">+Add</button>
+  </div>
+  <!-- <div class="values-list-overlay" *ngIf="showOverlay"></div> -->
+  <ul *ngIf="showValues && !pan1" class="values-list">Select data to add:
+    <ng-container *ngIf="filteredValues.length > 0; else noValues">
+      <div *ngFor="let value of filteredValues" (click)="selectValue(value)" class="value">
+        <input type="checkbox" [checked]="isSelected(value)">
+        <span>{{ value }}</span>
       </div>
-      <!-- <div class="values-list-overlay" *ngIf="showOverlay"></div> -->
-        <ul *ngIf="showValues && !pan1" class="values-list">Select data to add:
-          <ng-container *ngIf="filteredValues.length > 0; else noValues">
-            <div *ngFor="let value of filteredValues" (click)="selectValue(value)" class="value" >
-            <input type="checkbox" [checked]="isSelected(value)">
-            <span>{{ value }}</span>
-    </div>
-          </ng-container>
-          <ng-template #noValues>
-            No values found
-          </ng-template>
-        </ul>
+    </ng-container>
+    <ng-template #noValues>
+      No values found
+    </ng-template>
+  </ul>
 </div>
