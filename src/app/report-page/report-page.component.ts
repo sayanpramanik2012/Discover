@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { ShimmerService } from '../services/shimmer.service';
 import { users } from 'src/assets/json/users';
 
@@ -9,9 +9,10 @@ import { users } from 'src/assets/json/users';
 })
 export class ReportPageComponent {
   showRunButton = true;
+  @ViewChild("containerScroll") containerScroll:any;
   @Input() width: number= 0;
   constructor(public shimmerEffect: ShimmerService) { }
-  inputValue: string = '';
+  inputValue: string = '  Untitled Report';
   containerName: string = '';
   counter : number = 1;
   buttonVisible = true;
@@ -24,6 +25,8 @@ export class ReportPageComponent {
     this.counter ++;
     this.containerCard.push({ containerName: container,
       tableName: 'Table-' + (this.counter).toString() });
+    setTimeout(() => {
+      this.containerScroll.nativeElement.scrollTop= this.containerScroll.nativeElement.scrollHeight},0)
 
   }
   dataSelected = true;
