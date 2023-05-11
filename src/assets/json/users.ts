@@ -4,16 +4,21 @@ export const users = [
   {
     name: 'Test',
     visibleItems: [NavigationItem.Mb, NavigationItem.Ct],
-    "per":1
+    per: 1,
   },
   {
     name: 'Omkar',
-    visibleItems: [NavigationItem.Mb, NavigationItem.Ct,NavigationItem.Fs],
-    "per":2
+    visibleItems: [NavigationItem.Mb, NavigationItem.Ct, NavigationItem.Fs],
+    per: 2,
   },
   {
     name: 'Sayan',
-    visibleItems: [NavigationItem.Mb, NavigationItem.Ct, NavigationItem.Bt, NavigationItem.Fs],
-    "per":3
-  }
+    visibleItems: [
+      NavigationItem.Mb,
+      NavigationItem.Ct,
+      NavigationItem.Bt,
+      NavigationItem.Fs,
+    ],
+    per: 3,
+  },
 ];

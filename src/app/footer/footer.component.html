@@ -1,4 +1,10 @@
 <div class="footer">
-    <button class="load-btn" (click)="loadDataSelector()">Source: {{bottomString}}</button>
+  <button class="load-btn" (click)="loadDataSelector()">
+    Source: {{ bottomString }}
+  </button>
 </div>
-<app-data-selector-page (StatusDialogBox)="[showDataSelector = $event]" (ReportFooterString)="[handleData($event),checkReportPageStatus()]" *ngIf="showDataSelector"></app-data-selector-page>
+<app-data-selector-page
+  (StatusDialogBox)="[(showDataSelector = $event)]"
+  (ReportFooterString)="[handleData($event), checkReportPageStatus()]"
+  *ngIf="showDataSelector"
+></app-data-selector-page>

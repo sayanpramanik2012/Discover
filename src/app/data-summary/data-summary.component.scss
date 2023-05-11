@@ -1,63 +1,57 @@
 .data-summary {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    align-items: center;
-    margin: 0;
-    font-size: 14px;
-    background-color: var(--color-background-page-default);
-    color: var(--color-text-primary);
-    font-family: aktiv-grotesk, sans-serif !important;
-    overflow: hidden;
-    padding-bottom: 10px;
-    margin-left: 8px;
-    top: 100px;
-
+  display: flex;
+  align-items: center;
+  position: absolute;
+  align-items: center;
+  margin: 0;
+  font-size: 14px;
+  background-color: var(--color-background-page-default);
+  color: var(--color-text-primary);
+  font-family: aktiv-grotesk, sans-serif !important;
+  overflow: hidden;
+  padding-bottom: 10px;
+  margin-left: 8px;
+  top: 100px;
 }
 
 .currency {
-    margin-left: 2px;
-    cursor: pointer;
-    border-bottom: 2px solid black;
-    &:hover{
-        border-bottom: 2px solid skyblue;
-    }
-
+  margin-left: 2px;
+  cursor: pointer;
+  border-bottom: 2px solid black;
+  &:hover {
+    border-bottom: 2px solid skyblue;
+  }
 }
 .currency.disabled {
-    pointer-events: none; /* Disable pointer events on the span */
-    opacity: 0.5; /* Apply a visual indication of disabled state */
-  }
+  pointer-events: none; /* Disable pointer events on the span */
+  opacity: 0.5; /* Apply a visual indication of disabled state */
+}
 .products {
-    margin-left: 7px;
-    cursor: pointer;
-    border-bottom: 2px solid black;
-    &:hover{
-        border-bottom: 2px solid skyblue;
-    }
-
+  margin-left: 7px;
+  cursor: pointer;
+  border-bottom: 2px solid black;
+  &:hover {
+    border-bottom: 2px solid skyblue;
+  }
 }
 
 .total-us {
-    margin-left: 7px;
-    cursor: pointer;
-    border-bottom: 2px solid black;
-    &:hover{
-        border-bottom: 2px solid skyblue;
-    }
+  margin-left: 7px;
+  cursor: pointer;
+  border-bottom: 2px solid black;
+  &:hover {
+    border-bottom: 2px solid skyblue;
+  }
 }
 
 .weeks {
-    margin-left: 7px;
-    cursor: pointer;
-    border-bottom: 2px solid black;
-    &:hover{
-        border-bottom: 2px solid skyblue;
-    }
-
+  margin-left: 7px;
+  cursor: pointer;
+  border-bottom: 2px solid black;
+  &:hover {
+    border-bottom: 2px solid skyblue;
+  }
 }
-
-
 
 // .clicked{
 //     color: rgb(37, 104, 204);

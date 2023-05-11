@@ -1,15 +1,15 @@
 <div class="data-summary">
-  <span *ngFor="let i of [0, 1, 2, 3]; let index = index;">
-    <span > &nbsp; {{ prefixList[i] }}</span>
-    <span class="currency"
-    mat-button-close
-    [class.clicked]="isClicked"
-    [class.disabled]="shimmerEffect.shimmerActive"
-    (click)="onButtonClick(index);"
-    
-      ><b> {{ sharedDataSummary[i] }} </b></span>
+  <span *ngFor="let i of [0, 1, 2, 3]; let index = index">
+    <span> &nbsp; {{ prefixList[i] }}</span>
+    <span
+      class="currency"
+      mat-button-close
+      [class.clicked]="isClicked"
+      [class.disabled]="shimmerEffect.shimmerActive"
+      (click)="onButtonClick(index)"
+      ><b> {{ sharedDataSummary[i] }} </b></span
+    >
   </span>
 
   <!-- <app-side-panel (itemAdded)="updatecount()"></app-side-panel> -->
 </div>
-

@@ -1,13 +1,18 @@
-import { Component, EventEmitter, Output, Input, OnChanges, SimpleChanges} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { __values } from 'tslib';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { ShimmerService } from '../services/shimmer.service';
 
 // import * as data from '../../assets/jsondata/summary.json';
 @Component({
   selector: 'app-data-summary',
   templateUrl: './data-summary.component.html',
-  styleUrls: ['./data-summary.component.scss']
+  styleUrls: ['./data-summary.component.scss'],
 })
 export class DataSummaryComponent {
   // data = this.data;
@@ -18,12 +23,10 @@ export class DataSummaryComponent {
   currentIndex!: number;
   currentLabel!: string;
   @Input() count!: number;
-@Input() singleVal!: string;
+  @Input() singleVal!: string;
 
   constructor(private http: HttpClient, public shimmerEffect: ShimmerService) {
-
-    this.http.get("../../assets/jsondata/summary.json").subscribe((res) => {
-
+    this.http.get('../../assets/jsondata/summary.json').subscribe((res) => {
       this.jsondata = res;
 
       this.jsondata = this.jsondata;
@@ -33,9 +36,10 @@ export class DataSummaryComponent {
       for (let i = 0; i < this.data.length; i++) {
         this.prefixList.push(this.data[i].prefix);
         if (this.data[i].value.length > 1) {
-          this.sharedDataSummary.push((this.data[i].value.length).toString() + "  " + this.data[i].label);
-        }
-        else {
+          this.sharedDataSummary.push(
+            this.data[i].value.length.toString() + '  ' + this.data[i].label
+          );
+        } else {
           this.sharedDataSummary.push(this.data[i].value[0]);
         }
       }
@@ -46,17 +50,14 @@ export class DataSummaryComponent {
   @Input() itemAdded!: any;
   updatecount(): void {
     if (this.count === 0) {
-      this.sharedDataSummary[this.currentIndex] = "select";
-    }
-    else if (this.count ===1){
-      if (this.singleVal ==="many"){
-      this.sharedDataSummary[this.currentIndex]="many";
-      }
-      else
-      this.sharedDataSummary[this.currentIndex] = this.singleVal;
-    }
-    else {
-      this.sharedDataSummary[this.currentIndex] = this.count.toString() + (" ") + this.currentLabel;
+      this.sharedDataSummary[this.currentIndex] = 'select';
+    } else if (this.count === 1) {
+      if (this.singleVal === 'many') {
+        this.sharedDataSummary[this.currentIndex] = 'many';
+      } else this.sharedDataSummary[this.currentIndex] = this.singleVal;
+    } else {
+      this.sharedDataSummary[this.currentIndex] =
+        this.count.toString() + ' ' + this.currentLabel;
     }
     console.log(this.count);
     console.log(this.itemAdded);
@@ -78,8 +79,7 @@ export class DataSummaryComponent {
     this.labelClicked.emit(label);
   }
 
-
   ontest() {
-    console.log(this.sharedDataSummary)
+    console.log(this.sharedDataSummary);
   }
 }
