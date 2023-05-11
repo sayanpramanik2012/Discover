@@ -19,7 +19,6 @@ import { AgGridModule } from 'ag-grid-angular';
 import { SidePanelComponent } from './side-panel/side-panel.component';
 import { RunBtnComponent } from './run-btn/run-btn.component';
 import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
-import { LineChartComponent } from './line-chart/line-chart.component';
 
 
 
@@ -36,7 +35,6 @@ import { LineChartComponent } from './line-chart/line-chart.component';
     SidePanelComponent,
     RunBtnComponent,
     BottomBarComponent,
-    LineChartComponent,
    
   ],
   imports: [
