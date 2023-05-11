@@ -26,7 +26,7 @@
 <app-side-panel (sidePanelWidth)="sidePanelWidth($event)" (valueSelected)="handleValueSelected($event)" (countChanged)="updateCount($event)"
 (updated)="onUpdate()" *ngIf="openSidePanel" class="side-panel" [label]="clickedLabel" (panelClosed)="onPanelClosed()" ></app-side-panel>
 </div>  
-<div style="flex-grow: 1; overflow-y: auto;">
+<div #containerScroll style="flex-grow: 1; overflow-y: auto;">
   <div *ngFor="let a of containerCard" class="container-card">
     <div *ngIf="a.containerName === 'Table'" class="container-card-inner">
       <div *ngIf="shimmerEffect.shimmerActive" class="shimmer"></div>
