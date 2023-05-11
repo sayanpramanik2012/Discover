@@ -1,20 +1,21 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  ViewChild,
+} from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
 import { ValueFormatterParams } from 'ag-grid-community';
 import { ShimmerService } from '../services/shimmer.service';
 
-
-
-
 @Component({
   selector: 'app-grid-table',
   templateUrl: './grid-table.component.html',
-  styleUrls: ['./grid-table.component.scss']
+  styleUrls: ['./grid-table.component.scss'],
 })
 export class GridTableComponent implements OnChanges {
-
-
   @ViewChild('agGrid') agGrid!: AgGridAngular;
   @Input() actualData;
   rowData: any = [];
@@ -22,7 +23,7 @@ export class GridTableComponent implements OnChanges {
   label: string = '$';
   // actualData = false;
 
-  constructor(public http: HttpClient, public shimmerEffect: ShimmerService) { }
+  constructor(public http: HttpClient, public shimmerEffect: ShimmerService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     setTimeout(() => {
@@ -35,26 +36,25 @@ export class GridTableComponent implements OnChanges {
   }
 
   ngOnInit(): void {
-    this.http.get<any>('../../assets/json/gridData.json').subscribe(data => {
+    this.http.get<any>('../../assets/json/gridData.json').subscribe((data) => {
       console.log(this.actualData);
       this.rowData = data.rowData;
       this.columnDefs = data.columnDefs;
-      this.columnDefs.forEach((column:any) => {
-        if (column.field === "$"){
-            column.valueFormatter = this.priceFormatter.bind(this)
-            column.cellClass = 'text-align-right'
-            column.width = 100 ;
+      this.columnDefs.forEach((column: any) => {
+        if (column.field === '$') {
+          column.valueFormatter = this.priceFormatter.bind(this);
+          column.cellClass = 'text-align-right';
+          column.width = 100;
         }
-        if (column.field === "markets"){
+        if (column.field === 'markets') {
           column.width = 150;
         }
-        if (column.field === "periods"){
+        if (column.field === 'periods') {
           column.width = 150;
         }
-      })
+      });
     });
   }
-
 
   priceFormatter(params: ValueFormatterParams) {
     if (this.actualData) {

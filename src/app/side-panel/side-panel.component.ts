@@ -1,8 +1,13 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, count } from 'rxjs';
-import summaryData from '../../assets/jsondata/summary.json';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import valuesData from '../../assets/jsondata/extradata.json';
+import summaryData from '../../assets/jsondata/summary.json';
 // import {navigationItems} from '../../assets/jsondata/summary.json'
 interface SelectionItem {
   label: string;
@@ -18,22 +23,21 @@ interface ValueItem {
 @Component({
   selector: 'app-side-panel',
   templateUrl: './side-panel.component.html',
-  styleUrls: ['./side-panel.component.scss']
+  styleUrls: ['./side-panel.component.scss'],
 })
-export class SidePanelComponent{
+export class SidePanelComponent {
   @Input() label!: string;
   @Output() panelClosed = new EventEmitter<void>();
   data: any = summaryData;
   filteredData: any;
   values: any = valuesData;
-  num: number=0;
+  num: number = 0;
   filteredValues: string[] = [];
   selectButtonText!: string;
   pan1 = true;
 
   @Output() sidePanelWidth = new EventEmitter<number>();
   @ViewChild('sidePanel') sidePanelRef!: ElementRef;
-
 
   @Output() valueSelected = new EventEmitter<string>();
   ngAfterViewInit() {
@@ -42,8 +46,10 @@ export class SidePanelComponent{
   }
 
   ngOnChanges(): void {
-    this.filteredData = this.data.data.find((item: { label: string }) => item.label === this.label);
-    const valueItem = this.values.find(item => item.label === this.label);
+    this.filteredData = this.data.data.find(
+      (item: { label: string }) => item.label === this.label
+    );
+    const valueItem = this.values.find((item) => item.label === this.label);
     if (valueItem) {
       this.filteredValues = valueItem.data;
     }
@@ -53,12 +59,12 @@ export class SidePanelComponent{
   @Output() countChanged = new EventEmitter<number>();
 
   isSelected(value: string): boolean {
-
     return this.filteredData.value.includes(value);
   }
 
   selectAllValues(): void {
-    const allSelected = this.filteredData.value.length === this.filteredValues.length;
+    const allSelected =
+      this.filteredData.value.length === this.filteredValues.length;
     if (allSelected) {
       this.filteredData.value = []; // Deselect all values
     } else {
@@ -70,7 +76,8 @@ export class SidePanelComponent{
   }
 
   updateSelectButtonText(): void {
-    const allSelected = this.filteredData.value.length === this.filteredValues.length;
+    const allSelected =
+      this.filteredData.value.length === this.filteredValues.length;
     this.selectButtonText = allSelected ? 'Deselect All' : 'Select All';
   }
 
@@ -78,49 +85,45 @@ export class SidePanelComponent{
   addValue(): void {
     this.showValues = true;
     this.pan1 = false;
-
   }
-  back(): void{
-    this.pan1=true;
+  back(): void {
+    this.pan1 = true;
   }
-
 
   selectValue(value: string): void {
-  const index = this.filteredData.value.indexOf(value);
+    const index = this.filteredData.value.indexOf(value);
 
-  if (index !== -1) {
-    this.filteredData.value.splice(index, 1); // Uncheck the checkbox, remove value from array
-  } else {
-    this.filteredData.value.push(value); // Check the checkbox, add value to array
+    if (index !== -1) {
+      this.filteredData.value.splice(index, 1); // Uncheck the checkbox, remove value from array
+    } else {
+      this.filteredData.value.push(value); // Check the checkbox, add value to array
+    }
+
+    this.countChanged.emit(this.filteredData.value.length);
+    this.num = this.filteredData.value.length;
+
+    if (this.filteredData.value.length === 0) {
+      this.showValues = true;
+    }
+
+    if (this.filteredData.value.length === 1) {
+      this.valueSelected.emit(this.filteredData.value[0]); // Emit the selected value
+    }
+  }
+  removeValue(index: number): void {
+    this.filteredData.value.splice(index, 1);
+    this.countChanged.emit(this.filteredData.value.length);
+    this.num = this.filteredData.value.length;
+    if (this.filteredData.value.length === 1) {
+      this.valueSelected.emit(this.filteredData.value[0]); // Emit the selected value
+    }
   }
 
-  this.countChanged.emit(this.filteredData.value.length);
-  this.num=this.filteredData.value.length;
-
-  if (this.filteredData.value.length === 0) {
-    this.showValues = true;
-  }
-
-  if (this.filteredData.value.length === 1) {
-    this.valueSelected.emit(this.filteredData.value[0]); // Emit the selected value
-  }
-}
-removeValue(index: number): void {
-  this.filteredData.value.splice(index, 1);
-  this.countChanged.emit(this.filteredData.value.length);
-  this.num=this.filteredData.value.length;
-  if (this.filteredData.value.length === 1) {
-    this.valueSelected.emit(this.filteredData.value[0]); // Emit the selected value
-  }
-}
-
-
-  constructor(){}
+  constructor() {}
 
   closePanel(): void {
     this.panelClosed.emit();
     console.log(this.panelClosed);
     this.sidePanelWidth.emit(0);
   }
-
 }

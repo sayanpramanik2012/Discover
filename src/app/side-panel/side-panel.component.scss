@@ -8,9 +8,9 @@
   box-shadow: 0px 0px 10px rgba(80, 79, 79, 0.2);
   padding: 20px;
   box-sizing: border-box;
-  z-index:1;
+  z-index: 1;
 }
-.head{
+.head {
   display: flex;
   position: absolute;
   top: 20px;
@@ -22,15 +22,15 @@
   // top:20px;
   // left: 30px;
 }
-.back{
+.back {
   position: absolute;
   border: none;
   background: none;
   font-size: inherit;
   cursor: pointer;
 }
-.icon-close{
-  border:none;
+.icon-close {
+  border: none;
   cursor: pointer;
 }
 .value-box {
@@ -56,23 +56,23 @@
   text-overflow: ellipsis;
   color: var(--color-text-primary);
   padding: 8px 0;
-  &:hover{
-    cursor:pointer
+  &:hover {
+    cursor: pointer;
   }
 }
-.All{
+.All {
   margin-top: 20px;
   margin-bottom: 20px;
   border: none;
   background-color: transparent;
   color: #2d6df6;
   text-decoration: underline;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 }
-.value{
-  background-color:#ffffff;
+.value {
+  background-color: #ffffff;
   padding-top: 5px;
   padding-left: 2px;
 }
@@ -88,20 +88,20 @@
   visibility: hidden;
   opacity: 0.5;
 }
-.icon-delete{
+.icon-delete {
   font-size: 15px;
 }
 .h2:hover .close-button {
   visibility: visible;
 }
 
-.close-sidepanel{
+.close-sidepanel {
   background-color: transparent;
   border: none;
   cursor: pointer;
   margin-left: 260px;
 }
-.icon-dot{
+.icon-dot {
   margin-right: 10px;
   border: none;
   background-color: transparent;
@@ -110,11 +110,11 @@
   margin-top: 50px;
   padding: 10px;
   background-color: #ececec;
-  &-p2{
+  &-p2 {
     margin-top: 50px;
     padding: 10px;
     background-color: #ececec;
-    &:hover{
+    &:hover {
       background-color: #ececec;
     }
   }
@@ -142,33 +142,33 @@
       font-weight: 600;
     }
   }
-  &:hover{
+  &:hover {
     background-color: #dae5fc;
   }
   & .icon-expand {
     margin-right: 15px;
   }
 }
-.h2{
+.h2 {
   margin-top: 10px;
   margin-bottom: 5px;
   position: relative;
-  font-family: 'Trebuchet MS', sans-serif;
+  font-family: "Trebuchet MS", sans-serif;
   padding: 10px;
   font-size: 15px;
   background-color: hsl(0, 0%, 100%);
   border-left: 3px solid #b1afaf;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  &-p2{
+  &-p2 {
     border-radius: 1px;
     position: relative;
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: "Trebuchet MS", sans-serif;
     padding: 10px;
     font-size: 15px;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
     border-bottom: 3px solid #c5c3c3;
-    &:hover{
-      background-color: #E6E6E6;
+    &:hover {
+      background-color: #e6e6e6;
     }
     & input[type="checkbox"] {
       margin-right: 5px;
@@ -180,7 +180,7 @@
 }
 .value-box-p2 {
   display: inline-block;
-  background-color: #BDD1FC;
+  background-color: #bdd1fc;
   padding: 3px;
   padding-left: 5px;
   margin: 2px;
@@ -193,7 +193,7 @@
   }
 }
 .selected-value {
-  background-color: #E6E6E6; /* Change this to the desired background color */
+  background-color: #e6e6e6; /* Change this to the desired background color */
 }
 
 .h1 {
@@ -205,23 +205,23 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
   font-weight: 100;
-  &-p2{
+  &-p2 {
     font-weight: 100;
     margin-left: 200px;
   }
 }
-.add{
-    color: #2d6df6;
-    font-style: normal;
-    background: transparent;
-    font-weight: 700;
-    font-size: 11px;
-    line-height: 16px;
-    text-decoration: underline;
-    padding: 4px;
-    border: 0px;
-    margin-top: 12px;
-    cursor: pointer;
+.add {
+  color: #2d6df6;
+  font-style: normal;
+  background: transparent;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 16px;
+  text-decoration: underline;
+  padding: 4px;
+  border: 0px;
+  margin-top: 12px;
+  cursor: pointer;
 }
 .h4-p2 {
   display: flex;
@@ -233,9 +233,8 @@
   background-color: rgb(207, 207, 207);
   color: rgb(0, 0, 0);
   padding: 1px 1px;
-  margin-left: 6px
+  margin-left: 6px;
 }
-.checkbox{
+.checkbox {
   padding: 8px;
-
 }
