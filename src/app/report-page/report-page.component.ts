@@ -9,11 +9,12 @@ import { users } from 'src/assets/json/users';
 })
 export class ReportPageComponent {
   showRunButton = true;
-  @Input() width!: number;
+  @Input() width: number= 0;
   constructor(public shimmerEffect: ShimmerService) { }
   inputValue: string = '';
   containerName: string = '';
   counter : number = 1;
+  buttonVisible = true;
 
   containerCard = [
     { containerName: 'Table', tableName: 'Table-1' },
@@ -60,6 +61,8 @@ updateCount(newCount: number): void {
 onUpdate(): void {
 
 }
+widthupadater() {}
+
 }
 
 
