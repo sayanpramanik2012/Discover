@@ -21,7 +21,7 @@
         <button type="button" class="material-symbols-outlined" > more_horiz </button>
     </div>
   </div>
-  <div style="width:100%; margin-bottom: 40px;">
+  <div style="display:flex;width:100%;">
   <app-data-summary *ngIf="dataSelected" [count]="count" [singleVal]="singleVal" (openSidePanel)="openSidePanel = true" (labelClicked)="showPanel($event)"></app-data-summary>
 <app-side-panel (sidePanelWidth)="sidePanelWidth($event)" (valueSelected)="handleValueSelected($event)" (countChanged)="updateCount($event)"
 (updated)="onUpdate()" *ngIf="openSidePanel" class="side-panel" [label]="clickedLabel" (panelClosed)="onPanelClosed()" ></app-side-panel>
