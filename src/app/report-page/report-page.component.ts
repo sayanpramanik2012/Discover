@@ -11,7 +11,7 @@ export class ReportPageComponent {
   showRunButton = true;
   @Input() width: number= 0;
   constructor(public shimmerEffect: ShimmerService) { }
-  inputValue: string = '';
+  inputValue: string = '  Untitled Report';
   containerName: string = '';
   counter : number = 1;
   buttonVisible = true;
