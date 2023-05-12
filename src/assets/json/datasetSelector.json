@@ -1,76 +1,74 @@
 {
-    "content_1": [
-        {
-            "title": "Omnishopper 2.0 panel",
-            "description": "Broad, trended analytics of individual shop purchasing behavior in online and in store channels."
-          
-        },
-        {
-            "title": "Retail Measurement",
-            "description": "Cross-channel and granular performance tracking of in-store, point-of-sale data."
-          
-        },
-        {
-            "title": "Homescan panel",
-            "description": "Brand trended analytics of individual shop purchasing behaviour in entire and in store"
-        },
-        {
-            "title": "Omnishopper panel",
-            "description": "Broad, trended analytics of individual shop behavior in online and in store channels."
-        },
-        {
-            "title": "Omnishopper panel",
-            "description": "Broad, trended analytics of individual shop behavior in online and in store channels."
-        },
-        {
-            "title": "Homescan panel",
-            "description": "Brand trended analytics of individual shop purchasing behaviour in entire and in store"
-        },
-        {
-            "title": "Retail Measurement",
-            "description": "Cross-channel and granular performance tracking of in-store, point-of-sale data."
-        },
-        {
-            "title": "Homescan panel",
-            "description": "Brand trended analytics of individual shopper purchasing behaviour in entire and in store"
-        }
-    ],
+  "content_1": [
+    {
+      "title": "Omnishopper 2.0 panel",
+      "description": "Broad, trended analytics of individual shop purchasing behavior in online and in store channels."
+    },
+    {
+      "title": "Retail Measurement",
+      "description": "Cross-channel and granular performance tracking of in-store, point-of-sale data."
+    },
+    {
+      "title": "Homescan panel",
+      "description": "Brand trended analytics of individual shop purchasing behaviour in entire and in store"
+    },
+    {
+      "title": "Omnishopper panel",
+      "description": "Broad, trended analytics of individual shop behavior in online and in store channels."
+    },
+    {
+      "title": "Omnishopper panel",
+      "description": "Broad, trended analytics of individual shop behavior in online and in store channels."
+    },
+    {
+      "title": "Homescan panel",
+      "description": "Brand trended analytics of individual shop purchasing behaviour in entire and in store"
+    },
+    {
+      "title": "Retail Measurement",
+      "description": "Cross-channel and granular performance tracking of in-store, point-of-sale data."
+    },
+    {
+      "title": "Homescan panel",
+      "description": "Brand trended analytics of individual shopper purchasing behaviour in entire and in store"
+    }
+  ],
 
-    "content_2": [
-        {
-            "title": "AUS APAC Dataset"
-        },
-        {
-            "title": "Retail Measurement"
-        },
-        {
-            "title": "Syndicated US"
-        },
-        {
-            "title": "Bacon"
-        },
-        {
-            "title": "BB_Fuzz_FM"
-        },
-        {
-            "title": "BB_Gems_FM_OD"
-        },
-        {
-            "title": "Retail Measurement"
-        },
-        {
-            "title": "Homescan panel"
-        }
-    ],
-    "content_3":[
-        {
-            "title": "Nielsen US RMS "
-        },
-        {
-            "title": "97210-RB_RULE"
-        },
-        {
-            "title": "OrderId_391_CSNLSSYNDPI"
-        }
-    ]
+  "content_2": [
+    {
+      "title": "AUS APAC Dataset"
+    },
+    {
+      "title": "Retail Measurement"
+    },
+    {
+      "title": "Syndicated US"
+    },
+    {
+      "title": "Bacon"
+    },
+    {
+      "title": "BB_Fuzz_FM"
+    },
+    {
+      "title": "BB_Gems_FM_OD"
+    },
+    {
+      "title": "Retail Measurement"
+    },
+    {
+      "title": "Homescan panel"
+    }
+  ],
+  "content_3": [
+    {
+      "title": "Nielsen US RMS "
+    },
+    {
+      "title": "97210-RB_RULE"
+    },
+    {
+      "title": "OrderId_391_CSNLSSYNDPI"
+    }
+  ]
 }
