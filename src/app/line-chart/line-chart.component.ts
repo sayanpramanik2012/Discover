@@ -153,4 +153,17 @@ export class LineChartComponent {
       this.lineChart = new Chart(this.chartOptions);
     });
   }
+  Run() {
+    this.chartOptions.series = this.actualDataSeries;
+    this.chartOptions.yAxis.labels.formatter = function () {
+      const formattedValue = '$' + this.value;
+      return formattedValue;
+    };
+
+    this.chartOptions.tooltip.formatter = function () {
+      const formattedValue = '$' + this.y;
+      return `<span style="font-size: 11px;">${this.point.category}</span><br><span style="font-size: 12px;">${this.series.name}:</span> <strong>${formattedValue}</strong>`;
+    };
+    this.lineChart = new Chart(this.chartOptions);
+  }
 }
