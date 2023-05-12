@@ -1,5 +1,6 @@
 <div>
-  <div *ngIf="shimmerEffect.shimmerActive" class="shimmer"></div>
+  <!-- <div *ngIf="shimmerEffect.shimmerActive" class="shimmer"></div> -->
 
-  <p>Line chart comes here</p>
+  <div [chart]="lineChart"></div>
+  <button (click)="renderLineChart()">LOAD</button>
 </div>
