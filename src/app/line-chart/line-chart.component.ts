@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, SimpleChanges } from '@angular/core';
+import { ShimmerService } from '../services/shimmer.service';
 import { Chart } from 'angular-highcharts';
 import { SeriesOptionsType } from 'highcharts';
 
@@ -20,7 +21,7 @@ export class LineChartComponent {
   chartOptions: any;
   min: number = Number.MAX_VALUE;
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, public shimmerEffect: ShimmerService) {
     this.http.get('../../assets/json/lineData.json').subscribe((res) => {
       this.products = res;
       this.productNames = Object.keys(this.products);
