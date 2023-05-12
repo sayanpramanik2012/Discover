@@ -1,23 +1,18 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
-import { AgGridAngular } from 'ag-grid-angular';
-import { ValueFormatterParams } from 'ag-grid-community';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { ShimmerService } from '../services/shimmer.service';
 
 @Component({
   selector: 'app-line-chart',
   templateUrl: './line-chart.component.html',
-  styleUrls: ['./line-chart.component.scss']
+  styleUrls: ['./line-chart.component.scss'],
 })
 export class LineChartComponent {
-
   @Input() actualData;
 
-
-  constructor(public http: HttpClient, public shimmerEffect: ShimmerService) { }
+  constructor(public http: HttpClient, public shimmerEffect: ShimmerService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    setTimeout(() => {
-    }, 2500);
+    setTimeout(() => {}, 2500);
   }
 }
