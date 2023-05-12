@@ -12,7 +12,7 @@ export class AddButtonComponent {
   isDropdownOpen = false;
   displayTable = false ;
   // showRunButton=false;
-
+  
   @Output() statusTableDisplay = new EventEmitter<boolean>();
   @Output() statusRunButtonDisplay = new EventEmitter<boolean>();
   @Output() emitCardType = new EventEmitter<string>();
@@ -30,7 +30,7 @@ export class AddButtonComponent {
         break;
       case 'Line Chart':
         // Handle line chart button click
-        this.showLine();
+        
         this.toggleDropdown();
         break;
       default:
@@ -58,17 +58,6 @@ export class AddButtonComponent {
     });
     // this.displayTable= true;
     // this.statusTableDisplay.emit(this.displayTable)
-  }
-  showLine(){
-    of(this.shimmerEffect.shimmering()).pipe(
-      delay(1) // adjust the delay time as needed
-    ).subscribe(() => {
-      this.displayTable = true;
-      this.statusTableDisplay.emit(this.displayTable);
-      this.statusRunButtonDisplay.emit(true);
-      // this.showRunButton = true;
-    });
-
   }
 
 }

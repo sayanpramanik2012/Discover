@@ -1,7 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { ShimmerService } from '../services/shimmer.service';
 import { users } from 'src/assets/json/users';
-import { LineChartComponent } from '../line-chart/line-chart.component';
 
 @Component({
   selector: 'app-report-page',
@@ -19,20 +18,13 @@ export class ReportPageComponent {
   buttonVisible = true;
 
   containerCard = [
-    { containerName: 'Table', tableName: 'Table - 1' },
-    // { containerName: 'LineChart', tableName: 'Table-1' }
+    { containerName: 'Table', tableName: 'Table-1' },
   ];
 
   addContainer(container: string) {
     this.counter ++;
-    console.log(container);
-    if (container==="Table")
-    this.containerCard.push({ containerName: container, tableName: 'Table - ' + (this.counter).toString() });
-    else
-    {
-      this.containerName="LineChart";
-      this.containerCard.push({ containerName: container, tableName: 'Line chart - ' + (this.counter).toString() });
-    }
+    this.containerCard.push({ containerName: container,
+      tableName: 'Table-' + (this.counter).toString() });
     setTimeout(() => {
       this.containerScroll.nativeElement.scrollTop= this.containerScroll.nativeElement.scrollHeight},0)
 

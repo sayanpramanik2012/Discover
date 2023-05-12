@@ -25,7 +25,7 @@
   <app-data-summary *ngIf="dataSelected" [count]="count" [singleVal]="singleVal" (openSidePanel)="openSidePanel = true" (labelClicked)="showPanel($event)"></app-data-summary>
 <app-side-panel (sidePanelWidth)="sidePanelWidth($event)" (valueSelected)="handleValueSelected($event)" (countChanged)="updateCount($event)"
 (updated)="onUpdate()" *ngIf="openSidePanel" class="side-panel" [label]="clickedLabel" (panelClosed)="onPanelClosed()" ></app-side-panel>
-</div>
+</div>  
 <div #containerScroll style="flex-grow: 1; overflow-y: auto;">
   <div *ngFor="let a of containerCard" class="container-card">
     <div *ngIf="a.containerName === 'Table'" class="container-card-inner">
@@ -39,22 +39,6 @@
       </div>
       <app-grid-table [actualData]="shimmerEffect.actualData"></app-grid-table>
     </div>
-
-
-    <div *ngIf="a.containerName === 'Line Chart'" class="container-card-inner">
-      <div *ngIf="shimmerEffect.shimmerActive" class="shimmer"></div>
-      <div class="container-card-header">
-        <input class="tab-header" type="text" id="tab-header" [value]="a.tableName">
-        <div>
-          <button type="button" class="material-symbols-outlined" style="margin-right:10px;"> expand_content </button>
-          <button type="button" class="material-symbols-outlined"> more_horiz </button>
-        </div>
-      </div>
-      <app-line-chart [actualData]="shimmerEffect.actualData"></app-line-chart>
-    </div>
-
-
-
   </div>
 </div>
   <app-run-btn [width]="width" (previewStatus)="[shimmerEffect.actualData=$event, showRunButton = false]" [showRunButton]="showRunButton"
