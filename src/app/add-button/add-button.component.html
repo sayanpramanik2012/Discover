@@ -2,10 +2,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<button type="button" class="material-symbols-outlined" [disabled]="shimmerEffect.shimmerActive" (click)="toggleDropdown()">add_chart</button>
+<button type="button" class="material-symbols-outlined" [disabled]="shimmerEffect.shimmerActive" (click)="toggleDropdown() ">add_chart</button>
 
 <div *ngIf="isDropdownOpen" class="dropdown" [style.marginRight.px]="width">
-    <span *ngFor="let button of buttons" class="dropDown-name" (click)="handleButtonClick(button.name)">
+    <span *ngFor="let button of buttons" class="dropDown-name" (click)="handleButtonClick(button.name); shimmerEffect.shimmering()">
         <span class="dropDown-symbol"><i class="{{button.icon}}"></i></span>
         <span>{{ button.name}}</span></span>
 </div>

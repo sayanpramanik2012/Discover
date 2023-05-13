@@ -11,6 +11,7 @@ import { SeriesOptionsType } from 'highcharts';
 })
 export class LineChartComponent {
   @Input() actualData;
+  @Input() showRunButton!: boolean;
   products: any;
   selectedProduct: string = 'beer';
   productNames: string[] = [];
@@ -20,6 +21,10 @@ export class LineChartComponent {
   actualDataSeries: SeriesOptionsType[] = [];
   chartOptions: any;
   min: number = Number.MAX_VALUE;
+  bottomBarIsVisible: boolean = false;
+  runButtonClicked: boolean = false;
+
+ 
 
   constructor(public http: HttpClient, public shimmerEffect: ShimmerService) {
     this.http.get('../../assets/json/lineData.json').subscribe((res) => {
@@ -154,6 +159,8 @@ export class LineChartComponent {
     });
   }
   Run() {
+    this.runButtonClicked = true;
+    this.bottomBarIsVisible = true;
     this.chartOptions.series = this.actualDataSeries;
     this.chartOptions.yAxis.labels.formatter = function () {
       const formattedValue = '$' + this.value;
@@ -165,5 +172,9 @@ export class LineChartComponent {
       return `<span style="font-size: 11px;">${this.point.category}</span><br><span style="font-size: 12px;">${this.series.name}:</span> <strong>${formattedValue}</strong>`;
     };
     this.lineChart = new Chart(this.chartOptions);
+    setTimeout(() => {
+      this.bottomBarIsVisible = false;
+      }, 3000);
   }
+  
 }
