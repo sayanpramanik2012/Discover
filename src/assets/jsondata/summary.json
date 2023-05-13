@@ -1,39 +1,27 @@
 {
-    "data": [
-        {
-            "label": "Facts",
-            "value": [
-                "$"
-            ],
-            "prefix": "",
-            "off": 0
-        },
-        {
-            "label": "Products",
-            "value": [
-                "Beer",
-                "Coco cola",
-                "Coffee",
-                "Milk"
-            ],
-            "prefix": "of",
-            "off": 1
-        },
-        {
-            "label": "Markets",
-            "value": [
-                "Total US",
-                "IND"
-            ],
-            "prefix": "in",
-            "off": 2
-        },
-        {
-            "label": "Periods",
-            "value": [
-                "13 4 Weeks"
-            ],
-            "prefix": "during"
-        }
-    ]
+  "data": [
+    {
+      "label": "Facts",
+      "value": ["$"],
+      "prefix": "",
+      "off": 0
+    },
+    {
+      "label": "Products",
+      "value": ["Beer", "Coco cola", "Coffee", "Milk"],
+      "prefix": "of",
+      "off": 1
+    },
+    {
+      "label": "Markets",
+      "value": ["Total US", "IND"],
+      "prefix": "in",
+      "off": 2
+    },
+    {
+      "label": "Periods",
+      "value": ["13 4 Weeks"],
+      "prefix": "during"
+    }
+  ]
 }

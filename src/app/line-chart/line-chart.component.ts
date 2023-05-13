@@ -24,8 +24,6 @@ export class LineChartComponent {
   bottomBarIsVisible: boolean = false;
   runButtonClicked: boolean = false;
 
- 
-
   constructor(public http: HttpClient, public shimmerEffect: ShimmerService) {
     this.http.get('../../assets/json/lineData.json').subscribe((res) => {
       this.products = res;
@@ -174,7 +172,6 @@ export class LineChartComponent {
     this.lineChart = new Chart(this.chartOptions);
     setTimeout(() => {
       this.bottomBarIsVisible = false;
-      }, 3000);
+    }, 3000);
   }
-  
 }
