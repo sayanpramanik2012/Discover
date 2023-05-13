@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataSelectorPageComponent } from './data-selector-page/data-selector-page.component';
@@ -20,8 +20,7 @@ import { SidePanelComponent } from './side-panel/side-panel.component';
 import { RunBtnComponent } from './run-btn/run-btn.component';
 import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
-
-
+import { ChartModule } from 'angular-highcharts';
 
 @NgModule({
   declarations: [
@@ -37,20 +36,20 @@ import { LineChartComponent } from './line-chart/line-chart.component';
     RunBtnComponent,
     BottomBarComponent,
     LineChartComponent,
-   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatDialogModule ,
+    MatDialogModule,
     HttpClientModule,
     FormsModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
     AgGridModule,
+    ChartModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
