@@ -1,8 +1,14 @@
 <head>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
 </head>
+<!-- prettier-ignore -->
 <div (click)="widthupadater()" class="container-wrapper" style="padding-left:10px;" [style.marginRight.px]="width">
   <div style="width:100%;display:flex; justify-content: space-between;">
     <div>
@@ -38,6 +44,17 @@
         </div>
       </div>
       <app-grid-table [actualData]="shimmerEffect.actualData"></app-grid-table>
+    </div>
+    <div *ngIf="a.containerName === 'Line Chart'" class="container-card-inner">
+      <div *ngIf="shimmerEffect.shimmerActive" class="shimmer"></div>
+      <div class="container-card-header">
+        <input class="tab-header" type="text" id="tab-header" [value]="a.tableName">
+        <div>
+          <button type="button" class="material-symbols-outlined" style="margin-right:10px;"> expand_content </button>
+          <button type="button" class="material-symbols-outlined"> more_horiz </button>
+        </div>
+      </div>
+      <app-line-chart [actualData]="shimmerEffect.actualData" ></app-line-chart>
     </div>
   </div>
 </div>
