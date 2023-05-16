@@ -1,14 +1,14 @@
 import {
   Component,
-  ElementRef,
-  EventEmitter,
   Input,
   Output,
+  EventEmitter,
   ViewChild,
+  ElementRef,
 } from '@angular/core';
-import valuesData from '../../assets/jsondata/extradata.json';
 import summaryData from '../../assets/jsondata/summary.json';
-// import {navigationItems} from '../../assets/jsondata/summary.json'
+import valuesData from '../../assets/jsondata/extradata.json';
+
 interface SelectionItem {
   label: string;
   value: string[];

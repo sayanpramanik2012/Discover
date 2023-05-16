@@ -1,5 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { ShimmerService } from '../services/shimmer.service';
+import { users } from 'src/assets/json/users';
 
 @Component({
   selector: 'app-report-page',
@@ -9,13 +10,27 @@ import { ShimmerService } from '../services/shimmer.service';
 export class ReportPageComponent {
   showRunButton = true;
   @ViewChild('containerScroll') containerScroll: any;
+  @ViewChild('containerScroll') containerScroll: any;
   @Input() width: number = 0;
   constructor(public shimmerEffect: ShimmerService) {}
+  inputValue: string = '  Untitled Report';
   inputValue: string = '  Untitled Report';
   containerName: string = '';
   counter: number = 1;
   buttonVisible = true;
 
+  containerCard = [{ containerName: 'Table', tableName: 'Table-1' }];
+
+  addContainer(container: string) {
+    this.counter++;
+    this.containerCard.push({
+      containerName: container,
+      tableName: 'Table-' + this.counter.toString(),
+    });
+    setTimeout(() => {
+      this.containerScroll.nativeElement.scrollTop =
+        this.containerScroll.nativeElement.scrollHeight;
+    }, 0);
   containerCard = [
     { containerName: 'Table', tableName: 'Table - 1' },
     // { containerName: 'LineChart', tableName: 'Table-1' }

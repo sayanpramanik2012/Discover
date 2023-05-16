@@ -1,16 +1,16 @@
-import { Component, EventEmitter,Input,Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ShimmerService } from '../services/shimmer.service';
 import { delay } from 'rxjs/operators';
 import { of } from 'rxjs';
 @Component({
   selector: 'app-add-button',
   templateUrl: './add-button.component.html',
-  styleUrls: ['./add-button.component.scss']
+  styleUrls: ['./add-button.component.scss'],
 })
 export class AddButtonComponent {
-  constructor(public shimmerEffect: ShimmerService){}
+  constructor(public shimmerEffect: ShimmerService) {}
   isDropdownOpen = false;
-  displayTable = false ;
+  displayTable = false;
   // showRunButton=false;
 
   @Output() statusTableDisplay = new EventEmitter<boolean>();
@@ -30,7 +30,6 @@ export class AddButtonComponent {
         break;
       case 'Line Chart':
         // Handle line chart button click
-        this.showLine();
         this.toggleDropdown();
         break;
       default:
@@ -46,29 +45,18 @@ export class AddButtonComponent {
       this.isDropdownOpen = true;
     }
   }
-  showTable(){
-
-    of(this.shimmerEffect.shimmering()).pipe(
-      delay(1) // adjust the delay time as needed
-    ).subscribe(() => {
-      this.displayTable = true;
-      this.statusTableDisplay.emit(this.displayTable);
-      this.statusRunButtonDisplay.emit(true);
-      // this.showRunButton = true;
-    });
+  showTable() {
+    of(this.shimmerEffect.shimmering())
+      .pipe(
+        delay(1) // adjust the delay time as needed
+      )
+      .subscribe(() => {
+        this.displayTable = true;
+        this.statusTableDisplay.emit(this.displayTable);
+        this.statusRunButtonDisplay.emit(true);
+        // this.showRunButton = true;
+      });
     // this.displayTable= true;
     // this.statusTableDisplay.emit(this.displayTable)
   }
-  showLine(){
-    of(this.shimmerEffect.shimmering()).pipe(
-      delay(1) // adjust the delay time as needed
-    ).subscribe(() => {
-      this.displayTable = true;
-      this.statusTableDisplay.emit(this.displayTable);
-      this.statusRunButtonDisplay.emit(true);
-      // this.showRunButton = true;
-    });
-
-  }
-
 }
