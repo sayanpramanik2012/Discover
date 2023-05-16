@@ -1,42 +1,39 @@
-@import 'node_modules/ag-grid-community/styles/ag-grid.css';
-@import 'node_modules/ag-grid-community/styles/ag-theme-alpine.css';
-
+@import "node_modules/ag-grid-community/styles/ag-grid.css";
+@import "node_modules/ag-grid-community/styles/ag-theme-alpine.css";
 
 // .ag-theme-alpine {
 //     height: 100px;
 //   }
 
-  .ag-theme-alpine{
-    height: 100%;
-    --ag-header-background-color: white;
-    --ag-odd-row-background-color: white;
-    --ag-background-color: white;
-  }
+.ag-theme-alpine {
+  height: 100%;
+  --ag-header-background-color: white;
+  --ag-odd-row-background-color: white;
+  --ag-background-color: white;
+}
 
-  .box {
-    position: relative;
-    overflow: hidden; /* Added to hide overflow content */
-  }
-  
-  .shimmer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background: linear-gradient(to right, #f0f0f0 0%, #dedede 20%, #f0f0f0 40%);
-    background-size: 1000px 100%;
-    animation: shimmer 1s infinite linear forwards;
-    z-index: 2;
-  }
-  
-  @keyframes shimmer {
-    0% {
-      background-position: -1000px 0;
-    }
-    100% {
-      background-position: 1000px 0;
-    }
-  }
-  
+.box {
+  position: relative;
+  overflow: hidden; /* Added to hide overflow content */
+}
 
+.shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to right, #f0f0f0 0%, #dedede 20%, #f0f0f0 40%);
+  background-size: 1000px 100%;
+  animation: shimmer 1s infinite linear forwards;
+  z-index: 2;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}

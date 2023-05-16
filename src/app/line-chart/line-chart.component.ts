@@ -24,8 +24,6 @@ export class LineChartComponent {
   bottomBarIsVisible: boolean = false;
   runButtonClicked: boolean = false;
 
- 
-
   constructor(public http: HttpClient, public shimmerEffect: ShimmerService) {
     this.http.get('../../assets/json/lineData.json').subscribe((res) => {
       this.products = res;
@@ -155,12 +153,18 @@ export class LineChartComponent {
           },
         },
       };
+      console.log();
       this.lineChart = new Chart(this.chartOptions);
     });
   }
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.actualData === true) {
+      this.Run();
+    }
+  }
   Run() {
-    this.runButtonClicked = true;
-    this.bottomBarIsVisible = true;
+    // this.runButtonClicked = true;
+    // this.bottomBarIsVisible = true;
     this.chartOptions.series = this.actualDataSeries;
     this.chartOptions.yAxis.labels.formatter = function () {
       const formattedValue = '$' + this.value;
@@ -174,7 +178,6 @@ export class LineChartComponent {
     this.lineChart = new Chart(this.chartOptions);
     setTimeout(() => {
       this.bottomBarIsVisible = false;
-      }, 3000);
+    }, 3000);
   }
-  
 }

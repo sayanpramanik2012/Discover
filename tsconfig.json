@@ -22,10 +22,7 @@
     "allowSyntheticDefaultImports": true,
     "useDefineForClassFields": false,
     "noImplicitAny": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

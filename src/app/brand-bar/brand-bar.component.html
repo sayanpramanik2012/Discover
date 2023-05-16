@@ -1,33 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
 </head>
 
 <body>
   <div class="brand-bar">
-    <img src="./assets/niq_discover_logo.png" class="pic" alt="NIQ DISCOVER Logo" width="67" height="27">
-    <p class="dis" >Discover</p>
+    <img
+      src="./assets/niq_discover_logo.png"
+      class="pic"
+      alt="NIQ DISCOVER Logo"
+      width="67"
+      height="27"
+    />
+    <p class="dis">Discover</p>
 
     <div class="brand-bar__nav">
-      <button *ngFor="let item of navItems; let i = index"
-              class="brand-bar__nav-item"
-              [class.active]=item.active
-              (click)=activateNavItem(i)>
+      <button
+        *ngFor="let item of navItems; let i = index"
+        class="brand-bar__nav-item"
+        [class.active]="item.active"
+        (click)="activateNavItem(i)"
+      >
         {{ item.label }}
       </button>
     </div>
 
     <div class="right"></div>
-    <button type="button" class="but" style="padding-right: 10px;">
-      <i class="fa fa-bell" style="font-size:18px"></i>
+    <button type="button" class="but" style="padding-right: 10px">
+      <i class="fa fa-bell" style="font-size: 18px"></i>
     </button>
     <mat-icon>account_circle</mat-icon>
-    <button type="button" class="nabut">{{ username }}
+    <button type="button" class="nabut">{{ username }}</button>
+    <i class="fa fa-angle-down" style="font-size: 18px"></i>
+    <button type="button" class="but" style="padding-right: 10px">
+      <mat-icon>help_outline</mat-icon>
     </button>
-    <i class="fa fa-angle-down" style="font-size:18px"></i>
-    <button type="button" class="but" style="padding-right: 10px;">
-      <mat-icon>help_outline</mat-icon></button>
-</div>
-
+  </div>
+</body>

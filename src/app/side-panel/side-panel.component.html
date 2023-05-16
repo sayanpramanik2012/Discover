@@ -1,67 +1,91 @@
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+  />
 </head>
 <div [ngClass]="'side-panel'" #sidePanel>
   <button *ngIf="!pan1" class="back" (click)="back()">
     <i class="fas fa-arrow-left"></i>
   </button>
 
-  <button class="close-sidepanel" >
+  <button class="close-sidepanel">
     <span class="material-symbols-outlined icon-dot">more_horiz</span>
     <span class="material-symbols-outlined" (click)="closePanel()">close</span>
   </button>
-  <h3 class="head">{{ label }} <span class="material-symbols-outlined icon-expand">
-    expand_more
-    </span></h3>
+  <h3 class="head">
+    {{ label }}
+    <span class="material-symbols-outlined icon-expand"> expand_more </span>
+  </h3>
   <div *ngIf="pan1" class="selection-box">
-    <h4> <span class="material-symbols-outlined icon-expand">
-      expand_more
-      </span><span class="selection">Selection</span>
+    <h4>
+      <span class="material-symbols-outlined icon-expand"> expand_more </span
+      ><span class="selection">Selection</span>
       <button class="material-symbols-outlined icon-menu">menu</button>
-      </h4>
+    </h4>
     <div class="h1">Sum Σ</div>
     <ul *ngIf="filteredData">
       <ng-container *ngFor="let value of filteredData.value; let i = index">
         <div class="h2">
           <span>{{ value }}</span>
-          <span class="close-button" (click)="removeValue(i)"><span class="material-symbols-outlined icon-delete">delete</span></span>
+          <span class="close-button" (click)="removeValue(i)"
+            ><span class="material-symbols-outlined icon-delete"
+              >delete</span
+            ></span
+          >
         </div>
       </ng-container>
     </ul>
     <button class="add" (click)="addValue()">+Add</button>
   </div>
 
+  <div *ngIf="showValues && !pan1">
+    <div class="selection-box-p2">
+      <div class="h4-p2">
+        Selected<span class="selected-label"> {{ num }} </span>
+        <span class="h1-p2">Σ</span>
+      </div>
 
-
-<div *ngIf="showValues && !pan1">
-  <div class="selection-box-p2">
-    <div class="h4-p2">Selected<span class="selected-label"> {{num}} </span>
-      <span class="h1-p2">Σ</span></div>
-
-      <div >
+      <div>
         <ul *ngIf="filteredData">
-            <ng-container *ngFor="let value of filteredData.value; let i = index">
-              <span class="value-box-p2">{{value}} <span class="close-button-p2" (click)="removeValue(i)">×</span></span>
-            </ng-container>
-        </ul></div>
+          <ng-container *ngFor="let value of filteredData.value; let i = index">
+            <span class="value-box-p2"
+              >{{ value }}
+              <span class="close-button-p2" (click)="removeValue(i)"
+                >×</span
+              ></span
+            >
+          </ng-container>
+        </ul>
       </div>
+    </div>
 
-      <button class="All"(click)="selectAllValues()">
-        {{ selectButtonText }}
-      </button>
-      <ul >
-        <ng-container *ngIf="filteredValues.length > 0; else noValues">
-          <div *ngFor="let value of filteredValues" (click)="selectValue(value)" [ngClass]="{ 'selected-value': isSelected(value) }" class="h2-p2" >
-            <input type="checkbox" [checked]="isSelected(value)" class="checkbox" >
-            <span [ngClass]="{ 'bold': isSelected(value) }">{{ value }}</span>
-          </div>
-        </ng-container>
-        <ng-template #noValues>
-          No values found
-        </ng-template>
-      </ul>
-      </div>
+    <button class="All" (click)="selectAllValues()">
+      {{ selectButtonText }}
+    </button>
+    <ul>
+      <ng-container *ngIf="filteredValues.length > 0; else noValues">
+        <div
+          *ngFor="let value of filteredValues"
+          (click)="selectValue(value)"
+          [ngClass]="{ 'selected-value': isSelected(value) }"
+          class="h2-p2"
+        >
+          <input
+            type="checkbox"
+            [checked]="isSelected(value)"
+            class="checkbox"
+          />
+          <span [ngClass]="{ bold: isSelected(value) }">{{ value }}</span>
+        </div>
+      </ng-container>
+      <ng-template #noValues> No values found </ng-template>
+    </ul>
+  </div>
   <!-- <ul *ngIf="showValues && !pan1" class="values-list">Select data to add:
     <ng-container *ngIf="filteredValues.length > 0; else noValues">
       <div *ngFor="let value of filteredValues" (click)="selectValue(value)" class="value">
