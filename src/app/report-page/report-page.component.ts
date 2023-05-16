@@ -10,10 +10,8 @@ import { users } from 'src/assets/json/users';
 export class ReportPageComponent {
   showRunButton = true;
   @ViewChild('containerScroll') containerScroll: any;
-  @ViewChild('containerScroll') containerScroll: any;
   @Input() width: number = 0;
   constructor(public shimmerEffect: ShimmerService) {}
-  inputValue: string = '  Untitled Report';
   inputValue: string = '  Untitled Report';
   containerName: string = '';
   counter: number = 1;
@@ -27,30 +25,6 @@ export class ReportPageComponent {
       containerName: container,
       tableName: 'Table-' + this.counter.toString(),
     });
-    setTimeout(() => {
-      this.containerScroll.nativeElement.scrollTop =
-        this.containerScroll.nativeElement.scrollHeight;
-    }, 0);
-  containerCard = [
-    { containerName: 'Table', tableName: 'Table - 1' },
-    // { containerName: 'LineChart', tableName: 'Table-1' }
-  ];
-
-  addContainer(container: string) {
-    this.counter++;
-    console.log(container);
-    if (container === 'Table')
-      this.containerCard.push({
-        containerName: container,
-        tableName: 'Table - ' + this.counter.toString(),
-      });
-    else {
-      this.containerName = 'LineChart';
-      this.containerCard.push({
-        containerName: container,
-        tableName: 'Line chart - ' + this.counter.toString(),
-      });
-    }
     setTimeout(() => {
       this.containerScroll.nativeElement.scrollTop =
         this.containerScroll.nativeElement.scrollHeight;

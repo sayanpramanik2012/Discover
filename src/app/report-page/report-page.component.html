@@ -10,3 +10,54 @@
 </head>
 <!-- prettier-ignore -->
 <div (click)="widthupadater()" class="container-wrapper" style="padding-left:10px;" [style.marginRight.px]="width">
+  <div style="width:100%;display:flex; justify-content: space-between;">
+    <div>
+      <input input class="report-header" type="text" [(ngModel)]="inputValue" value={{inputValue}} >
+    </div>
+    <div class="all-buttons">
+      <button type="button" class="material-symbols-outlined">undo</button>
+      <button type="button" class="material-symbols-outlined" style="margin-left: 10px;">redo</button>
+      <span class="vertical-line"></span>
+      <button type="button" class="material-symbols-outlined" style="margin-right: 10px;" >download</button>
+      <button type="button" class="material-symbols-outlined" style="margin-left: 10px;" >save</button>
+      <span class="vertical-line"></span>
+      <app-add-button [width]="width" (statusRunButtonDisplay)="[showRunButton = $event, shimmerEffect.actualData=false]"
+      (emitCardType)=" [containerName=$event, addContainer(containerName)]"
+        style="margin-right: 15px;"></app-add-button>
+        <button type="button" class="material-symbols-outlined" > more_horiz </button>
+    </div>
+  </div>
+  <div style="display:flex;width:100%;">
+  <app-data-summary *ngIf="dataSelected" [count]="count" [singleVal]="singleVal" (openSidePanel)="openSidePanel = true" (labelClicked)="showPanel($event)"></app-data-summary>
+<app-side-panel (sidePanelWidth)="sidePanelWidth($event)" (valueSelected)="handleValueSelected($event)" (countChanged)="updateCount($event)"
+(updated)="onUpdate()" *ngIf="openSidePanel" class="side-panel" [label]="clickedLabel" (panelClosed)="onPanelClosed()" ></app-side-panel>
+</div>  
+<div #containerScroll style="flex-grow: 1; overflow-y: auto;">
+  <div *ngFor="let a of containerCard" class="container-card">
+    <div *ngIf="a.containerName === 'Table'" class="container-card-inner">
+      <div *ngIf="shimmerEffect.shimmerActive" class="shimmer"></div>
+      <div class="container-card-header">
+        <input class="tab-header" type="text" id="tab-header" [value]="a.tableName">
+        <div>
+          <button type="button" class="material-symbols-outlined" style="margin-right:10px;"> expand_content </button>
+          <button type="button" class="material-symbols-outlined"> more_horiz </button>
+        </div>
+      </div>
+      <app-grid-table [actualData]="shimmerEffect.actualData"></app-grid-table>
+    </div>
+    <div *ngIf="a.containerName === 'Line Chart'" class="container-card-inner">
+      <div *ngIf="shimmerEffect.shimmerActive" class="shimmer"></div>
+      <div class="container-card-header">
+        <input class="tab-header" type="text" id="tab-header" [value]="a.tableName">
+        <div>
+          <button type="button" class="material-symbols-outlined" style="margin-right:10px;"> expand_content </button>
+          <button type="button" class="material-symbols-outlined"> more_horiz </button>
+        </div>
+      </div>
+      <app-line-chart [actualData]="shimmerEffect.actualData"></app-line-chart>
+    </div>
+  </div>
+</div>
+  <app-run-btn [width]="width" (previewStatus)="[shimmerEffect.actualData=$event, showRunButton = false]" [showRunButton]="showRunButton"
+  ></app-run-btn>
+  </div>
