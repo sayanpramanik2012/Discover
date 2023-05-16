@@ -10,10 +10,10 @@ import { of } from 'rxjs';
 export class AddButtonComponent {
   constructor(public shimmerEffect: ShimmerService){}
   isDropdownOpen = false;
-  displayTable = false ;
+  // displayTable = false ;
   // showRunButton=false;
   
-  @Output() statusTableDisplay = new EventEmitter<boolean>();
+  // @Output() statusTableDisplay = new EventEmitter<boolean>();
   @Output() statusRunButtonDisplay = new EventEmitter<boolean>();
   @Output() emitCardType = new EventEmitter<string>();
   @Input() width!: number;
@@ -51,8 +51,8 @@ export class AddButtonComponent {
     of(this.shimmerEffect.shimmering()).pipe(
       delay(1) // adjust the delay time as needed
     ).subscribe(() => {
-      this.displayTable = true;
-      this.statusTableDisplay.emit(this.displayTable);
+      // this.displayTable = true;
+      // this.statusTableDisplay.emit(this.displayTable);
       this.statusRunButtonDisplay.emit(true);
       // this.showRunButton = true;
     });
