@@ -1,10 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import {Component,EventEmitter,Input,Output,ViewChild} from '@angular/core';
 import { ShimmerService } from '../services/shimmer.service';
 import { AgGridAngular } from 'ag-grid-angular';
 
@@ -33,12 +27,4 @@ export class RunBtnComponent {
       this.bottomBarIsVisible = false;
     }, 3000);
   }
-  // startLine() {
-  //   this.bottomBarIsVisible = true;
-  //   this.actualData = true;
-  //   this.previewStatus.emit(this.actualData);
-  //   setTimeout(() => {
-  //     this.bottomBarIsVisible = false;
-  //   }, 3000);
-  // }
 }
