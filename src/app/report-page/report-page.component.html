@@ -21,7 +21,7 @@
       <button type="button" class="material-symbols-outlined" style="margin-right: 10px;" >download</button>
       <button type="button" class="material-symbols-outlined" style="margin-left: 10px;" >save</button>
       <span class="vertical-line"></span>
-      <app-add-button [width]="width" (statusTableDisplay)="[shimmerEffect.displayTable = $event, showRunButton = true, shimmerEffect.actualData=false]"
+      <app-add-button [width]="width" (statusRunButtonDisplay)="[showRunButton = $event, shimmerEffect.actualData=false]"
       (emitCardType)=" [containerName=$event, addContainer(containerName)]"
         style="margin-right: 15px;"></app-add-button>
         <button type="button" class="material-symbols-outlined" > more_horiz </button>
