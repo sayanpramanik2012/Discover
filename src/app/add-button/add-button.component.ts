@@ -67,7 +67,7 @@ export class AddButtonComponent {
       )
       .subscribe(() => {
         this.displayLine = true;
-        this.statusTableDisplay.emit(this.displayLine);
+        // this.statusTableDisplay.emit(this.displayLine);
         this.statusRunButtonDisplay.emit(true);
         // this.showRunButton = true;
       });
