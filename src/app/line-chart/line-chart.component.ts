@@ -157,15 +157,14 @@ export class LineChartComponent {
       this.lineChart = new Chart(this.chartOptions);
     });
   }
-  // value() {
-  //   if (this.actualData) {
-  //     console.log('Linechart actual data:', this.actualData);
-  //     this.Run();
-  //   }
-  // }
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.actualData === true) {
+      this.Run();
+    }
+  }
   Run() {
-    this.runButtonClicked = true;
-    this.bottomBarIsVisible = true;
+    // this.runButtonClicked = true;
+    // this.bottomBarIsVisible = true;
     this.chartOptions.series = this.actualDataSeries;
     this.chartOptions.yAxis.labels.formatter = function () {
       const formattedValue = '$' + this.value;
