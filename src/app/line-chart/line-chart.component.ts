@@ -153,9 +153,16 @@ export class LineChartComponent {
           },
         },
       };
+      console.log();
       this.lineChart = new Chart(this.chartOptions);
     });
   }
+  // value() {
+  //   if (this.actualData) {
+  //     console.log('Linechart actual data:', this.actualData);
+  //     this.Run();
+  //   }
+  // }
   Run() {
     this.runButtonClicked = true;
     this.bottomBarIsVisible = true;
