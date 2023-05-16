@@ -11,6 +11,7 @@ export class AddButtonComponent {
   constructor(public shimmerEffect: ShimmerService) {}
   isDropdownOpen = false;
   displayTable = false;
+  displayLine = false;
   // showRunButton=false;
 
   @Output() statusTableDisplay = new EventEmitter<boolean>();
@@ -30,6 +31,7 @@ export class AddButtonComponent {
         break;
       case 'Line Chart':
         // Handle line chart button click
+        this.showLine();
         this.toggleDropdown();
         break;
       default:
@@ -53,6 +55,20 @@ export class AddButtonComponent {
       .subscribe(() => {
         this.displayTable = true;
         this.statusTableDisplay.emit(this.displayTable);
+        this.statusRunButtonDisplay.emit(true);
+        // this.showRunButton = true;
+      });
+    // this.displayTable= true;
+    // this.statusTableDisplay.emit(this.displayTable)
+  }
+  showLine() {
+    of(this.shimmerEffect.shimmering())
+      .pipe(
+        delay(1) // adjust the delay time as needed
+      )
+      .subscribe(() => {
+        this.displayLine = true;
+        this.statusTableDisplay.emit(this.displayLine);
         this.statusRunButtonDisplay.emit(true);
         // this.showRunButton = true;
       });
