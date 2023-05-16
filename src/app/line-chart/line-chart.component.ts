@@ -153,12 +153,18 @@ export class LineChartComponent {
           },
         },
       };
+      console.log();
       this.lineChart = new Chart(this.chartOptions);
     });
   }
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.actualData === true) {
+      this.Run();
+    }
+  }
   Run() {
-    this.runButtonClicked = true;
-    this.bottomBarIsVisible = true;
+    // this.runButtonClicked = true;
+    // this.bottomBarIsVisible = true;
     this.chartOptions.series = this.actualDataSeries;
     this.chartOptions.yAxis.labels.formatter = function () {
       const formattedValue = '$' + this.value;

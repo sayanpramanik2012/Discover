@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class ShimmerService {
   shimmerActive: boolean = false;
   actualData: boolean = false;
-  displayTable: boolean = false;
+  // displayTable: boolean = false;
   showRunButton: boolean = true;
   bottomBarIsVisible: boolean = false;
 
@@ -21,7 +21,7 @@ export class ShimmerService {
   }
 
   onCancel() {
-    this.displayTable = true;
+    // this.displayTable =true;
     this.actualData = false;
     this.shimmerActive = false;
     this.showRunButton = true;

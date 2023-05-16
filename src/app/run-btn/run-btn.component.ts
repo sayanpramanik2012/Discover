@@ -1,10 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import {Component,EventEmitter,Input,Output,ViewChild} from '@angular/core';
 import { ShimmerService } from '../services/shimmer.service';
 import { AgGridAngular } from 'ag-grid-angular';
 

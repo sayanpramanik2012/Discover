@@ -32,7 +32,7 @@ export class GridTableComponent implements OnChanges {
   }
 
   test() {
-    console.log(this.actualData);
+    console.log('Table actual data trigger:', this.actualData);
   }
 
   ngOnInit(): void {
