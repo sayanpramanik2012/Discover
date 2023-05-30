@@ -1,3 +1,11 @@
+---------------------------------------------------------------------------------------------------
+-------------------Github page is just the basic Initial layout of the project.--------------------
+*Github page doest represent the actual project
+for checking the full function clone the repo and run 
+1. npm i --force
+2. ng serve -o
+
+----------------------------------------------------------------------------------------------------
 # Discover
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
