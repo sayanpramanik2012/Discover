@@ -6,7 +6,7 @@ for checking the full function clone the repo and run
 2. ng serve -o
 
 *Github-page doesn't represent the actual project
-
+Visit- https://discover-niq.web.app to test
 ----------------------------------------------------------------------------------------------------
 # Discover
 
